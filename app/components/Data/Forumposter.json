@@ -1,0 +1,45 @@
+{
+  "Kategori": "I klasserommet",
+  "Tittel": "",
+  "Navn": "",
+  "Dato": "",
+  "Tekst": "",
+  "Tag": "",
+  "Favourite": false
+},
+{
+  "ID": "1",
+  "Tittel": "Finnes det gode tips til innledning når mobbing skal tas opp som tema i klassen?",
+  "Kategori": "Forelese om mobbing",
+  "Dato": "",
+  "Navn": "Blå Reke",
+  "Årstrinn": "8-10 trinn",
+  "Tekst": "Vi snakket om mobbing på foreldremøtet i min datters 8. klasse.
+   Jeg er foreldrekontakt og vi foreldre ønsket at læreren skulle diskutere
+   mobbing i klassen. Det er ikke et stort problem hos oss, men vi ønsker
+   at ungene våre skal ha gode holdninger. Læreren ville gjerne gjøre det,
+   men visste ikke helt hvordan. Har dere noen ideer?",
+  "Tagger": "8-10. trinn", "Forelesning", "holdningsbygging",
+  "Favoritt": false
+},
+{
+  "Tittel": "Jeg får ikke støtte fra kollegaene til å håndtere en vanskelig mobbesituasjon",
+  "Kategori": "Når arbeidsmiljøet hindrer deg i å gjøre en god jobb",
+  "Dato": "",
+  "Navn": "Grønn Ulv",
+  "Årstrinn": "7-10 trinn",
+  "Tekst": "Jeg har prøvd å løse en mobbesituasjon, men den er kompleks grunnet
+  begge barns foreldre mener deres barn er den utsatte. Jeg trenger støtte fra
+  kollegaer og rektor for å komme noen vei, men de mener skolen har gjort det
+  de kunne. Hva skal jeg gjøre? ",
+  "Tagger": "manglende støtte, foreldrene på bakbeina, ikke tatt på alvor av kollegaer",
+  "Favoritt": true
+},
+{
+  "Tittel": "Hvordan hjelpe et barn som har lukket seg?",
+  "Kategori": "barn som har lukket seg, stille barn",
+  "Årstrinn": "2-5 trinn",
+  "Tekst": "Et barn i klassen min har det ikke greit, barnet kommer fra et litt tustelig hjem og blir derfor ofte mobbet pga klær, bustet hår, at ingen ser foreldrene o.l. Jeg forsøker å løse situasjonene, men det utsatte barnet har helt lukket seg, og sier nesten aldri et ord. Barnet sitter stille og hører, men responderer særs lite. Har noen erfaring med dette, hvordan kan jeg hjelpe dette fine lille barnet?",
+  "Tagger": "barn lukket seg, kommer ikke igjennom",
+  "Favoritt": false
+},
