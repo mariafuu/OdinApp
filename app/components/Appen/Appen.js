@@ -34,89 +34,58 @@ export default class Appen extends Component {
     return (
 
       <View style={styles.background}>
-            <View style={styles.newsView}>
-              <Text style={styles.newsText}>Hello!</Text>
-              <Text style={styles.newsText}>Nyhetssaker som kan dukke opp</Text>
-            </View>
-
             <View style={styles.container1}>
+              <View style={styles.frontBox}>
+              </View>
+
+              <View style={styles.frontBox}>
               <TouchableOpacity
               style={styles.box1}
               onPress={this.onPress1}
               >
-                <View style={styles.box1}>
-                  <Text>Ny post</Text>
-                </View>
+                  <Text style={styles.knappFont}>Hvordan varsle</Text>
               </TouchableOpacity>
 
               <TouchableOpacity
                 style={styles.box1}
                 onPress={this.onPress2}
               >
-                <View style={styles.box1}>
-                  <View>
-                    <Text>Favoritt 1</Text>
-                  </View>
-                  <View>
-                    <Text>Favoritt 2</Text>
-                  </View>
-                  <View>
-                    <Text>Favoritt 3</Text>
-                  </View>
-                </View>
+                  <Text style={styles.knappFont}>Om appen og OdinStiftelsen</Text>
               </TouchableOpacity>
-            </View>
+              </View>
 
-            <View style={styles.container2}>
+
+            <View style={styles.frontBox}>
               <TouchableOpacity
-              style={styles.smallBox}
+              style={styles.box1}
               onPress={this.onPress3}
               >
                 <View>
-                  <Text>Lovverk</Text>
+                  <Text style={styles.knappFont}>Hva skulle det stå her?</Text>
                 </View>
               </TouchableOpacity>
 
               <TouchableOpacity
-              style={styles.smallBox}
+              style={styles.box1}
               onPress={this.onPress4}
               >
                 <View>
-                  <Text>Ressursbank</Text>
-                </View>
-              </TouchableOpacity>
-
-              <TouchableOpacity
-              style={styles.smallBox}
-              onPress={this.onPress5}
-              >
-                <View>
-                  <Text>Tips og råd</Text>
+                  <Text style={styles.knappFont}>Tips og råd</Text>
                 </View>
               </TouchableOpacity>
             </View>
 
-            <View style={styles.mainBox}>
-                <View style={styles.postBox}>
-                  <Text>Tittel på innlegg</Text>
-                  <View style={styles.navntittel}>
-                    <Text>Blå katt</Text>
-                    <Text>Dato</Text>
-                  </View>
-                  <View>
-                    <Text>Teksten i innlegget. Her bør det stå masse greier slik at vi får testet hva som skjer når det står mye her. Skal alt vises eller bare så så mange linjer?</Text>
-                  </View>
-                </View>
-
-                <View style={styles.postBox}>
-                  <Text>Nyeste poster</Text>
-                  <View>
-                    <Text>Hvordan burde jeg..?</Text>
-                    <Text>Kan jeg...?</Text>
-                  </View>
-                </View>
+            <View style={styles.frontBox}>
+            </View>
             </View>
 
+            <TouchableOpacity
+              style={styles.loggInn}
+              onPress={() => this.props.skjermBytte('Login')}>
+                <Text style={{color: 'white', fontWeight: 'bold', fontSize: 20}}>
+                  Logg inn
+                </Text>
+            </TouchableOpacity>
       </View>
     );
   }
@@ -127,63 +96,39 @@ const styles = StyleSheet.create({
     flex:1,
     backgroundColor: '#00CED1'
   },
-  newsView: {
-    flex:1,
-    backgroundColor: 'blue',
-    padding:5
-  },
-  newsText: {
-    color: 'white'
-  },
   container1: {
-    flex:2,
-    flexDirection: 'row',
-    backgroundColor: '#00CED1',
+    flex:9,
     justifyContent: 'space-between',
-    borderColor: '#4682b4',
     borderRadius: 4,
     borderWidth: 6
   },
-  container2: {
-    flex:1,
-    flexDirection: 'row',
-    backgroundColor: '#e0ffff',
-    justifyContent: 'space-between',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 6
+  frontBox: {
+    flex: 1,
+    flexDirection: 'row'
+  },
+  loggInn: {
+    flex: 1,
+    backgroundColor: '#4682b4',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   box1: {
     flex: 1,
     backgroundColor: '#fcc6c2',
     padding:10,
     justifyContent: 'center',
+    alignItems: 'center',
     borderColor: '#4682b4',
     borderRadius: 4,
     borderWidth: 3
   },
-  box3: {
-    flex:1
-  },
-  smallBox: {
-    flex:1,
-    backgroundColor:'#fdddda',
-    padding:2,
-    justifyContent: 'center'
+  knappFont: {
+    fontSize: 15,
+    color: 'black',
+    fontWeight: 'bold'
   },
   mainBox: {
     flex:10
-  },
-  postBox: {
-    height: 100,
-    backgroundColor: '#e0ffff',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 6
-  },
-  navntittel: {
-    flexDirection: 'row',
-    justifyContent: 'space-between'
   }
 
 })

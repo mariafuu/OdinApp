@@ -9,6 +9,7 @@ import Login from './app/components/Appen/Login.js';
 import Favoritter from './app/components/Appen/Favoritter.js';
 import SearchResult from './app/components/Appen/SearchResult.js';
 import Appen from './app/components/Appen/Appen.js';
+import Tips from './app/components/Appen/Tips.js';
 
 import Forum from './app/components/Forum/Forum.js';
 import Subforum from './app/components/Forum/Subforum.js';
@@ -26,11 +27,14 @@ export default class Odin extends Component {
   constructor(){
     super();
     this.state ={
-      currentScreen: Forside,
+      currentScreen: Login,
     }
     this.screens = {
-      Forside,
-      Profil
+      Forside, Profil, NyPost, Login, Favoritter, SearchResult, Appen,
+      Forum, Subforum, Forumpost,
+      DokumentRessurs, LydRessurs, NyRessurs, PresentasjonRessurs, Ressursbank,
+      RessursKategori, VideoRessurs
+
     }
   }
 
@@ -41,11 +45,44 @@ export default class Odin extends Component {
   render(){
       return(
         <View style={{flex:1}}>
-          <View>
-            <Text>Hallo!</Text>
+          <View style={styles.toolbar}>
+            <View>
+              <Image
+
+                source={require('../pictures/favourites_star.png')}
+              />
+            </View>
+            <View>
+              <Text style={styles.toolbarFont}>
+                Dette vil bli en toolbar!
+              </Text>
+            </View>
+            <View>
+              <Image
+                
+                source={require('../pictures/favourites_star.png')}
+              />
+            </View>
           </View>
-          <this.state.currentScreen skjermBytte={this.skjermBytte} />
+          <View style={{flex:8}}>
+            <this.state.currentScreen skjermBytte={this.skjermBytte} />
+          </View>
         </View>
       );
     }
   }
+
+  const styles = StyleSheet.create({
+    toolbar: {
+      flex: 1,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: 'black'
+    },
+    toolbarFont: {
+      fontSize:30,
+      fontWeight: 'bold',
+      color: 'white'
+    }
+  })

@@ -16,10 +16,6 @@ export default class Login extends Component {
   render() {
     return (
       <View style={styles.background}>
-        <View style={styles.newsView}>
-          <Text>Nyhetssaker og sånt</Text>
-          <Text>Hallo</Text>
-        </View>
         <View style={styles.mainField}>
           <View style={styles.loginGreie}>
             <Text>Brukernavn:</Text>

@@ -59,7 +59,7 @@ export default class Forside extends Component {
                     style={{width: 50, height: 50}}
                     source={require('../pictures/favourites_star.png')}
                     />
-                </View>
+                    </View>
                 <View>
                     <Text>Favoritter</Text>
                 </View>
