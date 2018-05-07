@@ -35,17 +35,13 @@ export default class Forside extends Component {
     return (
 
       <View style={styles.background}>
-            <View style={styles.newsView}>
-              <Text style={styles.newsText}>Hello!</Text>
-              <Text style={styles.newsText}>Nyhetssaker som kan dukke opp</Text>
-            </View>
 
             <View style={styles.container1}>
               <TouchableOpacity
               style={styles.box1}
               onPress={() => this.props.skjermBytte('NyPost')}
               >
-                <View style={styles.box1}>
+                <View>
                   <Text>Ny post</Text>
                 </View>
               </TouchableOpacity>
@@ -97,8 +93,8 @@ export default class Forside extends Component {
 
             <View style={styles.mainBox}>
             <ScrollView style={styles.contentBox}>
-                <View style={styles.postBox}>
-                  <Text>Jeg får ikke støtte fra kollegaene til å håndtere
+                <TouchableOpacity style={styles.postBox}>
+                  <Text style={styles.postTittel}>Jeg får ikke støtte fra kollegaene til å håndtere
                   en vanskelig mobbesituasjon</Text>
                   <View style={styles.navntittel}>
                     <Text>Blå katt</Text>
@@ -111,10 +107,10 @@ export default class Forside extends Component {
                     komme noen vei, men de mener skolen har gjort det de kunne.
                     Hva skal jeg gjøre?</Text>
                   </View>
-                </View>
+                </TouchableOpacity>
 
-                <View style={styles.postBox}>
-                  <Text>Tittel på innlegg</Text>
+                <TouchableOpacity style={styles.postBox}>
+                  <Text style={styles.postTittel}>Tittel på innlegg</Text>
                   <View style={styles.navntittel}>
                     <Text>Blå katt</Text>
                     <Text>Dato</Text>
@@ -122,10 +118,10 @@ export default class Forside extends Component {
                   <View>
                     <Text>Teksten i innlegget. Her bør det stå masse greier slik at vi får testet hva som skjer når det står mye her. Skal alt vises eller bare så så mange linjer?</Text>
                   </View>
-                </View>
+                </TouchableOpacity>
 
-                <View style={styles.postBox}>
-                  <Text>Hvordan hjelpe et barn som har lukket seg?</Text>
+                <TouchableOpacity style={styles.postBox}>
+                  <Text style={styles.postTittel}>Hvordan hjelpe et barn som har lukket seg?</Text>
                   <View style={styles.navntittel}>
                     <Text>Rød Høne</Text>
                     <Text>'30.04.18'</Text>
@@ -137,9 +133,9 @@ export default class Forside extends Component {
                     å løse situasjonene, men det utsatte barnet har helt lukket
                     seg og sier nesten aldri et ord. Barnet sitter stille og
                     hører, men responderer særs lite. Har noen erfaring med
-                    dette? Hvordan kan jeg hjelpe dette fine lille barnet?</Text>
+                    dette? Hvordan kan jeg hjelpe dette flotte barnet?</Text>
                   </View>
-                </View>
+                </TouchableOpacity>
             </ScrollView>
             </View>
 
@@ -169,6 +165,9 @@ const styles = StyleSheet.create({
     borderColor: '#4682b4',
     borderRadius: 4,
     borderWidth: 6
+  },
+  postTittel: {
+    fontWeight: 'bold'
   },
   container2: {
     flex:1,
@@ -214,7 +213,7 @@ const styles = StyleSheet.create({
     flex:1
   },
   postBox: {
-    height: 150,
+    height: 175,
     padding: 3,
     backgroundColor: '#e0ffff',
     borderColor: '#4682b4',

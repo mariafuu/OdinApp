@@ -30,11 +30,10 @@ export default class Odin extends Component {
       currentScreen: Login,
     }
     this.screens = {
-      Forside, Profil, NyPost, Login, Favoritter, SearchResult, Appen,
+      Forside, Profil, NyPost, Login, Favoritter, SearchResult, Appen, Tips,
       Forum, Subforum, Forumpost,
       DokumentRessurs, LydRessurs, NyRessurs, PresentasjonRessurs, Ressursbank,
       RessursKategori, VideoRessurs
-
     }
   }
 
@@ -47,10 +46,7 @@ export default class Odin extends Component {
         <View style={{flex:1}}>
           <View style={styles.toolbar}>
             <View>
-              <Image
 
-                source={require('../pictures/favourites_star.png')}
-              />
             </View>
             <View>
               <Text style={styles.toolbarFont}>
@@ -58,10 +54,7 @@ export default class Odin extends Component {
               </Text>
             </View>
             <View>
-              <Image
-                
-                source={require('../pictures/favourites_star.png')}
-              />
+
             </View>
           </View>
           <View style={{flex:8}}>
@@ -78,7 +71,7 @@ export default class Odin extends Component {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: 'black'
+      backgroundColor: 'grey'
     },
     toolbarFont: {
       fontSize:30,
@@ -86,3 +79,8 @@ export default class Odin extends Component {
       color: 'white'
     }
   })
+
+  /** <Image
+    style={{width: 50, height: 50}}
+    source={require('../pictures/favourites_star.png')}
+  /> **/
