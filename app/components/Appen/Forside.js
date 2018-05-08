@@ -149,14 +149,6 @@ const styles = StyleSheet.create({
     flex:1,
     backgroundColor: '#00CED1'
   },
-  newsView: {
-    flex:1,
-    backgroundColor: 'blue',
-    padding:5
-  },
-  newsText: {
-    color: 'white'
-  },
   container1: {
     flex:2,
     flexDirection: 'row',

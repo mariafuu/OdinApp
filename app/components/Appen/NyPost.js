@@ -9,6 +9,7 @@ export default class NyPost extends Component {
       textT: '',
       textI: '',
       textTag: '',
+      kategori: '',
       switchValue: false
     }
   }
@@ -17,43 +18,64 @@ export default class NyPost extends Component {
     return (
 
       <View style={styles.background}>
-          <View style={styles.newsView}>
-            <Text>Nyhetssaker og sånt</Text>
-            <Text>Hallo</Text>
-          </View>
           <View style={styles.mainBox}>
-            <Picker
-              selectedValue={this.state.language}
-              style={{ height: 50, width: 200}}
-              onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
-                <Picker.Item label="I klasserommet" value="klasserom" />
-                <Picker.Item label="Digital mobbing" value="digitalMobbin" />
-            </Picker>
+            <View style={styles.pickerStyle}>
+              <Picker
+                selectedValue={this.state.language}
+                kategori={this.state.language}
+                style={{ height: 50, width: 200}}
+                onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
+                  <Picker.Item label="I klasserommet" value="klasserom" />
+                  <Picker.Item label="Digital mobbing" value="digitalMobbing" />
+              </Picker>
+            </View>
 
             <View>
+              <View>
+              <View style={styles.header}>
+                <Text>Tittel</Text>
+              </View>
               <TextInput
-                style={{padding: 10}, {width: 150}}
+                style={styles.tittelInput}
                 placeholder="Tittel"
-                onChangeText={(textB) => this.setState({textT})}
+                onChangeText={(textT) => this.setState({textT})}
               />
-              <TextInput
-                style={{padding: 10}, {width: 150}, {height: 200}}
-                placeholder="Skriv innlegget ditt her"
-                onChangeText={(textB) => this.setState({textI})}
-              />
+              </View>
+              <View>
+              <View style={styles.header}>
+              <Text>Tekst</Text>
+              </View>
+                <TextInput
+                  multiline
+                  style={styles.textInputStyle}
+                  placeholder="Skriv innlegget ditt her"
+                  onChangeText={(textI) => this.setState({textI})}
+                />
+              </View>
             </View>
             <View>
-              <Text>Tagger</Text>
+              <View style={styles.header}>
+                <Text>Tagger</Text>
+              </View>
               <TextInput
-                style={{padding: 10}, {width: 150}}
+                style={styles.tittelInput}
                 placeholder="Skriv inn nøkkelord"
-                onChangeText={(textB) => this.setState({textTag})}
+                onChangeText={(textTag) => this.setState({textTag})}
               />
             </View>
-            <View>
-              <Switch
-                value={this.state.switchValue}
-              />
+            <View style={styles.bottom}>
+              <TouchableOpacity
+                style={styles.vanligKnapp}
+              >
+                <Text>Avbryt</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => this.props.skjermBytteNyPost('TestPost', this.kategori,
+                  this.textT, this.textI, this.textTag)}
+                style={styles.vanligKnapp}
+              >
+                <Text>Legg ut innlegg</Text>
+              </TouchableOpacity>
             </View>
 
           </View>
@@ -67,13 +89,49 @@ const styles = StyleSheet.create({
     flex:1,
     backgroundColor: '#4682b4'
   },
-  newsView: {
-    flex:1,
-    backgroundColor: 'blue',
-    padding:5
+  header: {
+    backgroundColor: '#e0ffff',
+    borderColor: '#4682b4',
+    borderRadius: 4,
+    borderWidth: 6,
+    width:70
   },
-  newsText: {
-    color: 'white'
+  bottom: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  vanligKnapp: {
+    backgroundColor: '#fcc6c2',
+    height: 40,
+    width: 100,
+    padding: 5,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  tittelInput: {
+    padding: 10,
+    width: 350,
+    backgroundColor: 'white',
+    borderColor: '#4682b4',
+    borderRadius: 4,
+    borderWidth: 6
+  },
+  textInputStyle: {
+    padding: 10,
+    width: 350,
+    height: 200,
+    backgroundColor: 'white',
+    borderColor: '#4682b4',
+    borderRadius: 4,
+    borderWidth: 6
+  },
+  pickerStyle: {
+    height: 50,
+    width: 200,
+    backgroundColor: '#e0ffff',
+    borderColor: '#4682b4',
+    borderRadius: 4,
+    borderWidth: 6
   },
   container1: {
     flex:2,

@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableHighlight, TouchableOpacity,
   TextInput, Switch } from 'react-native';
 
-export default class Appen extends Component {
+export default class TestPost extends Component {
   constructor(){
     super();
     this.state ={
-      textValue:'Hello',
-      switchValue: false
+      textKategori: 'hei',
+      textTittel: 'tittel',
+      textInnlegg: 'innlegg',
+      textTagger: 'tag'
     }
   }
   onPress1(){
@@ -15,15 +17,6 @@ export default class Appen extends Component {
   }
   onPress2(){
     console.log('Box 2 pressed');
-  }
-  onPress3(){
-    console.log('Box 3 Pressed');
-  }
-  onPress4(){
-    console.log('Box 4 pressed');
-  }
-  onPress5(){
-    console.log('Box 5 pressed');
   }
   onChangeText1(value){
     this.setState({
