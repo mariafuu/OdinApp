@@ -30,7 +30,6 @@ export default class Odin extends Component {
   constructor(){
     super();
     this.state ={
-      previousScreen: Appen,
       currentScreen: Appen
     }
     this.screens = {
