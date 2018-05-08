@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, TouchableHighlight, TouchableOpacity, TextInput, Switch } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableHighlight, TouchableOpacity, TextInput, Switch, ScrollView, Alert } from 'react-native';
 
 export default class Favoritter extends Component {
   constructor(){
@@ -9,20 +9,21 @@ export default class Favoritter extends Component {
       switchValue: false
     }
   }
+
+  ShowAlertDialog = () =>{
+
+    Alert.alert(
+      'Fjerne fra favoritter',
+      'Fjerne dette innlegget fra favoritter?',
+      [
+        {text: 'Avbryt', onPress: () => console.log('Ask me later Button Clicked')},
+        {text: 'Ja', onPress: () => console.log('Cancel Button Pressed'), style: 'cancel'},
+      ]
+    )
+    }
+
   onPress1(){
     console.log('Box 1 Pressed');
-  }
-  onPress2(){
-    console.log('Box 2 pressed');
-  }
-  onPress3(){
-    console.log('Box 3 Pressed');
-  }
-  onPress4(){
-    console.log('Box 4 pressed');
-  }
-  onPress5(){
-    console.log('Box 5 pressed');
   }
   onChangeText1(value){
     this.setState({
@@ -33,69 +34,118 @@ export default class Favoritter extends Component {
   render() {
     return (
       <View style={styles.background}>
-            <View style={styles.newsView}>
-              <Text style={styles.newsText}>Hello!</Text>
-              <Text style={styles.newsText}>Nyhetssaker som kan dukke opp</Text>
-            </View>
-
-            <View style={styles.container1}>
-              <TouchableOpacity
-              style={styles.button1}
-              onPress={this.onPress1}
-              >
-                <View style={styles.button1}>
-                  <Text>Nytt innlegg</Text>
-                </View>
+          <View style={styles.overskriftBox}>
+            <Text style={styles.overskrift}>Dine favoritter</Text>
+          </View>
+          <ScrollView style={styles.favorittliste}>
+            <View style={styles.favorittItem}>
+              <TouchableOpacity onPress={this.ShowAlertDialog}>
+                <Image
+                  style={styles.stjerne}
+                  source={require('../pictures/favourites_star.png')}
+                  />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.favorittTittel}>
+                <Text>Hva gjør jeg når noen krangler?</Text>
               </TouchableOpacity>
             </View>
 
-            <View style={styles.container2}>
-              <TouchableOpacity
-              style={styles.smallBox}
-              onPress={this.onPress3}
-              >
-                <View>
-                  <Text>Mine innlegg</Text>
-                </View>
+            <View style={styles.favorittItem}>
+              <TouchableOpacity>
+                <Image
+                  style={styles.stjerne}
+                  source={require('../pictures/favourites_star.png')}
+                  />
               </TouchableOpacity>
-
-              <TouchableOpacity
-              style={styles.smallBox}
-              onPress={this.onPress4}
-              >
-                <View>
-                  <Text>Uvisst enda</Text>
-                </View>
+              <TouchableOpacity style={styles.favorittTittel}>
+                <Text>Kan jeg si dette til ei jente i klassen?</Text>
               </TouchableOpacity>
             </View>
 
-            <View style={styles.container2}>
-              <TouchableOpacity
-              style={styles.smallBox}
-              onPress={this.onPress5}
-              >
-                <View>
-                  <Text>Ressursbank</Text>
-                </View>
+            <View style={styles.favorittItem}>
+              <TouchableOpacity>
+                <Image
+                  style={styles.stjerne}
+                  source={require('../pictures/favourites_star.png')}
+                  />
               </TouchableOpacity>
-              <TouchableOpacity
-              style={styles.smallBox}
-              onPress={this.onPress5}
-              >
-                <View>
-                  <Text>Tips og råd</Text>
-                </View>
+              <TouchableOpacity style={styles.favorittTittel}>
+                <Text>Er det greit å gå ut med dette i media?</Text>
               </TouchableOpacity>
             </View>
 
-            <View style={styles.mainBox}>
-                <View style={styles.postBox}>
-                  <Text>Favoritter</Text>
-                </View>
-                <View style={styles.postBox}>
-                  <Text>Innstillinger</Text>
-                </View>
+            <View style={styles.favorittItem}>
+              <TouchableOpacity>
+                <Image
+                  style={styles.stjerne}
+                  source={require('../pictures/favourites_star.png')}
+                  />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.favorittTittel}>
+                <Text>Hva gjør jeg når noen krangler?</Text>
+              </TouchableOpacity>
             </View>
+
+            <View style={styles.favorittItem}>
+              <TouchableOpacity>
+                <Image
+                  style={styles.stjerne}
+                  source={require('../pictures/favourites_star.png')}
+                  />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.favorittTittel}>
+                <Text>Hva gjør jeg når noen krangler?</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.favorittItem}>
+              <TouchableOpacity>
+                <Image
+                  style={styles.stjerne}
+                  source={require('../pictures/favourites_star.png')}
+                  />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.favorittTittel}>
+                <Text>Hva gjør jeg når noen krangler?</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.favorittItem}>
+              <TouchableOpacity>
+                <Image
+                  style={styles.stjerne}
+                  source={require('../pictures/favourites_star.png')}
+                  />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.favorittTittel}>
+                <Text>Hva gjør jeg når noen krangler?</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.favorittItem}>
+              <TouchableOpacity>
+                <Image
+                  style={styles.stjerne}
+                  source={require('../pictures/favourites_star.png')}
+                  />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.favorittTittel}>
+                <Text>Hva gjør jeg når noen krangler?</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.favorittItem}>
+              <TouchableOpacity>
+                <Image
+                  style={styles.stjerne}
+                  source={require('../pictures/favourites_star.png')}
+                  />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.favorittTittel}>
+                <Text>Hva gjør jeg når noen krangler?</Text>
+              </TouchableOpacity>
+            </View>
+          </ScrollView>
 
       </View>
     );
@@ -107,13 +157,32 @@ const styles = StyleSheet.create({
     flex:1,
     backgroundColor: '#4682b4'
   },
-  newsView: {
-    flex:1,
-    backgroundColor: 'blue',
-    padding:5
+  stjerne: {
+    height: 35,
+    width: 35,
+    padding: 3
   },
-  newsText: {
-    color: 'white'
+  favorittTittel: {
+    padding: 5
+  },
+  favorittliste: {
+    padding: 20
+  },
+  favorittItem: {
+    flexDirection: 'row',
+    padding: 10,
+    backgroundColor: '#e0ffff',
+    borderColor: '#4682b4',
+    borderRadius: 4,
+    borderWidth: 2
+  },
+  overskriftBox: {
+    backgroundColor: '#e0ffff',
+    padding: 10
+  },
+  overskrift: {
+    fontSize: 30,
+    fontWeight: 'bold'
   },
   container1: {
     flex:2,

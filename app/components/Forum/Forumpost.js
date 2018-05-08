@@ -1,16 +1,34 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableHighlight, TouchableOpacity,
-  TextInput, Switch, ScrollView } from 'react-native';
+  TextInput, Switch, ScrollView, Alert, Modal, Image } from 'react-native';
 
 export default class Forumpost extends Component {
   constructor(){
     super();
     this.state ={
+      modalVisible: false,
       svarNavn: 'Blå Ilder',
       svarDato: '10.05.18',
       svarTekst: 'Ta en skikkelig samtale med de barna som mobber. Det er absolutt ikke greit at de holder på sånn. Snakk med foreldrene deres også.'
     }
   }
+
+  setModalVisible(visible){
+    this.setState({modalVisible: visible});
+  }
+
+  ShowAlertDialog = () =>{
+
+    Alert.alert(
+      'Ressursbanken',
+      'Vil du foreslå dette innlegget til ressursbanken?',
+      [
+        {text: 'Avbryt', onPress: () => console.log('Ask me later Button Clicked')},
+        {text: 'Ja', onPress: () => console.log('Cancel Button Pressed'), style: 'cancel'},
+      ]
+    )
+    }
+
   onPress1(){
     console.log('Box 1 Pressed');
   }
@@ -31,7 +49,11 @@ export default class Forumpost extends Component {
           <View>
             <Text>I klasserommet</Text>
           </View>
-          <View>
+          <View style={styles.overskrift}>
+          <Image
+            style={styles.stjerne}
+            source={require('../pictures/favourites_star.png')}
+            />
             <Text style={styles.postTittel}>Hvordan hjelpe et barn som har lukket seg?</Text>
           </View>
           <View style={styles.navntittel}>
@@ -48,17 +70,53 @@ export default class Forumpost extends Component {
             dette? Hvordan kan jeg hjelpe dette flotte barnet?</Text>
           </View>
           <View style={styles.postKnapper}>
-          <TouchableOpacity style={styles.vanligKnapp}>
+          <TouchableOpacity style={styles.vanligKnapp}  onPress={this.ShowAlertDialog}>
             <Text>Foreslå til Ressursbank</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.vanligKnapp}>
             <Text>Rapporter</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.svarKnapp}>
+
+          <TouchableOpacity
+            style={styles.svarKnapp}
+            onPress={() => {
+              this.setModalVisible(true);
+            }}
+            >
             <Text style={styles.svartekst}>Svar</Text>
           </TouchableOpacity>
           </View>
         </View>
+
+      <Modal
+      animationType="slide"
+      transparent={false}
+      visible={this.state.modalVisible}
+      >
+        <View>
+          <View>
+          </View>
+
+          <View>
+            <TextInput
+              style={styles.textInputStyle}
+              placeholder="Skriv svaret ditt her"
+              onChangeText={(svarTekst) => this.setState({svarTekst})}
+            />
+          </View>
+
+          <View>
+            <TouchableOpacity
+              style={styles.vanligKnapp}
+              onPress={() => {
+                this.setModalVisible(false);
+              }}
+            >
+              <Text>Publiser svar</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
 
         <View style={styles.svar}>
           <View style={styles.luft}>
@@ -66,13 +124,11 @@ export default class Forumpost extends Component {
 
           <View style={styles.svarBox}>
             <View style={styles.navntittel}>
-              <Text>(this.svarNavn)</Text>
-              <Text>'06.05.18'</Text>
+              <Text>{this.state.svarNavn}</Text>
+              <Text>{this.state.svarDato}</Text>
             </View>
             <View>
-              <Text>Synes kanskje du burde ha en skikkelig samtale med
-              de barna som mobber og prøve å forklare hvordan det er for hun/han
-              som blir mobbet.</Text>
+              <Text>{this.state.svarTekst}</Text>
             </View>
           </View>
         </View>
@@ -137,6 +193,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#4682b4',
     padding: 15
   },
+  overskrift: {
+    flexDirection: 'row'
+  },
+  stjerne: {
+    height: 35,
+    width: 35,
+    padding: 3
+  },
   svarBox: {
     flex: 4,
     backgroundColor: '#e0ffff',
@@ -144,6 +208,15 @@ const styles = StyleSheet.create({
     borderColor: '#4682b4',
     borderRadius: 4,
     borderWidth: 3
+  },
+  textInputStyle: {
+    padding: 10,
+    width: 350,
+    height: 200,
+    backgroundColor: 'white',
+    borderColor: '#4682b4',
+    borderRadius: 4,
+    borderWidth: 6
   },
   svar: {
     flexDirection: 'row'

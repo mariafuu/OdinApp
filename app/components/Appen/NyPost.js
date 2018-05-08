@@ -9,10 +9,10 @@ export default class NyPost extends Component {
       textT: '',
       textI: '',
       textTag: '',
-      kategori: '',
-      switchValue: false
+      kategori: ''
     }
   }
+
 
   render() {
     return (
@@ -70,9 +70,8 @@ export default class NyPost extends Component {
                 <Text>Avbryt</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                onPress={() => this.props.skjermBytteNyPost('TestPost', this.kategori,
-                  this.textT, this.textI, this.textTag)}
-                style={styles.vanligKnapp}
+              style={styles.vanligKnapp}
+              onPress={() => this.props.skjermBytte('TestPost')}
               >
                 <Text>Legg ut innlegg</Text>
               </TouchableOpacity>
