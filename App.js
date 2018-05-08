@@ -31,7 +31,7 @@ export default class Odin extends Component {
     super();
     this.state ={
       previousScreen: Appen,
-      currentScreen: Appen
+      currentScreen: SearchResult
     }
     this.screens = {
       Forside, Profil, NyPost, Login, Favoritter, SearchResult, Appen, Tips, Feide,
