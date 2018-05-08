@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, TouchableHighlight, TouchableOpacity, TextInput, Switch, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableHighlight, TouchableOpacity, TextInput, Switch, ScrollView, Alert } from 'react-native';
 
-export default class VideoRessurs extends Component {
+export default class Meny extends Component {
   constructor(){
     super();
     this.state ={
@@ -9,14 +9,9 @@ export default class VideoRessurs extends Component {
       switchValue: false
     }
   }
+
   onPress1(){
     console.log('Box 1 Pressed');
-  }
-  onPress2(){
-    console.log('Box 2 pressed');
-  }
-  onPress3(){
-    console.log('Box 3 Pressed');
   }
   onChangeText1(value){
     this.setState({
@@ -47,16 +42,33 @@ export default class VideoRessurs extends Component {
 
 
           <View style={styles.overskriftBox}>
-            <Text style={styles.overskrift}>Når noen slår</Text>
+            <Text style={styles.overskrift}>Meny</Text>
           </View>
-          <View style={styles.beskrivelse}>
-            <Text style={styles.beskrivelseTekst}>Film som forklarer hvorfor enkelte barn slår og hvordan man
-            skal takle slike situasjoner, både i situasjonen og forebyggende.
-            </Text>
-          </View>
-          <TouchableOpacity style={styles.film}>
-            <Text style={styles.filmTekst}>Klikk her for å gå til youtube.com for å se filmen.</Text>
-          </TouchableOpacity>
+          <ScrollView style={styles.favorittliste}>
+            <View style={styles.favorittItem}>
+              <TouchableOpacity onPress={() => this.props.skjermBytte('Forside')}>
+                <Text>Forside</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.favorittItem}>
+              <TouchableOpacity onPress={() => this.props.skjermBytte('Ressursbank')}>
+                <Text>Ressursbank</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.favorittItem}>
+              <TouchableOpacity onPress={() => this.props.skjermBytte('Favoritter')}>
+                <Text>Favoritter</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.favorittItem}>
+              <TouchableOpacity onPress={() => this.props.skjermBytte('SearchResult')}>
+                <Text>Søk</Text>
+              </TouchableOpacity>
+            </View>
+          </ScrollView>
 
       </View>
     );
@@ -66,40 +78,30 @@ export default class VideoRessurs extends Component {
 const styles = StyleSheet.create({
   background: {
     flex:1,
-    backgroundColor: '#4682b4',
+    backgroundColor: '#4682b4'
+  },
+  stjerne: {
+    height: 35,
+    width: 35,
+    padding: 3
+  },
+  favorittTittel: {
     padding: 5
   },
-  beskrivelse: {
-    backgroundColor:'#e0ffff',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 2,
-    padding: 5
+  favorittliste: {
+    padding: 20
   },
-  beskrivelseTekst: {
-    fontSize: 20
-  },
-  filmTekst: {
-    fontSize: 20,
-    fontWeight: 'bold'
-  },
-  film: {
-    backgroundColor:'#e0ffff',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 2,
-    height: 250,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 5
-
-  },
-  overskriftBox: {
-    backgroundColor: '#e0ffff',
+  favorittItem: {
+    flexDirection: 'row',
     padding: 10,
+    backgroundColor: '#e0ffff',
     borderColor: '#4682b4',
     borderRadius: 4,
     borderWidth: 2
+  },
+  overskriftBox: {
+    backgroundColor: '#e0ffff',
+    padding: 10
   },
   overskrift: {
     fontSize: 30,
@@ -145,18 +147,6 @@ const styles = StyleSheet.create({
   postBox: {
     height: 100,
     backgroundColor: '#afeeee'
-  },
-  toolbar: {
-    height: 60,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'grey'
-  },
-  toolbarFont: {
-    fontSize:20,
-    fontWeight: 'bold',
-    color: 'white'
   }
 
 })

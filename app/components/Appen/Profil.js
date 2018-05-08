@@ -33,6 +33,25 @@ export default class Profil extends Component {
   render() {
     return (
       <View style={styles.background}>
+      <View style={styles.toolbar}>
+        <TouchableOpacity
+          style={{flex:1}}
+          onPress={() => this.props.skjermBytte('Meny')}>
+            <Text style={styles.toolbarFont}>Meny</Text>
+        </TouchableOpacity>
+        <View style={{flex:4}}>
+          <Text style={styles.toolbarFont}>
+            Dette vil bli en toolbar!
+          </Text>
+        </View>
+        <TouchableOpacity
+          style={{flex:1}}
+          onPress={() => this.props.skjermBytte('SearchResult')}>
+            <Text style={styles.toolbarFont}>Søk</Text>
+        </TouchableOpacity>
+      </View>
+
+
             <View style={styles.newsView}>
               <Text style={styles.newsText}>Hello!</Text>
               <Text style={styles.newsText}>Nyhetssaker som kan dukke opp</Text>
@@ -155,6 +174,18 @@ const styles = StyleSheet.create({
   postBox: {
     height: 100,
     backgroundColor: '#afeeee'
+  },
+  toolbar: {
+    height: 60,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'grey'
+  },
+  toolbarFont: {
+    fontSize:20,
+    fontWeight: 'bold',
+    color: 'white'
   }
 
 })

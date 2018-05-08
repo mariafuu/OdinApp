@@ -35,6 +35,23 @@ export default class Forside extends Component {
     return (
 
       <View style={styles.background}>
+            <View style={styles.toolbar}>
+              <TouchableOpacity
+                style={{flex:1}}
+                onPress={() => this.props.skjermBytte('Meny')}>
+                  <Text style={styles.toolbarFont}>Meny</Text>
+              </TouchableOpacity>
+              <View style={{flex:4}}>
+                <Text style={styles.toolbarFont}>
+                  Dette vil bli en toolbar!
+                </Text>
+              </View>
+              <TouchableOpacity
+                style={{flex:1}}
+                onPress={() => this.props.skjermBytte('SearchResult')}>
+                  <Text style={styles.toolbarFont}>Søk</Text>
+              </TouchableOpacity>
+            </View>
 
             <View style={styles.container1}>
               <TouchableOpacity
@@ -120,7 +137,7 @@ export default class Forside extends Component {
                   </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.postBox}>
+                <TouchableOpacity style={styles.postBox} onPress={() => this.props.skjermBytte('Forumpost')}>
                   <Text style={styles.postTittel}>Hvordan hjelpe et barn som har lukket seg?</Text>
                   <View style={styles.navntittel}>
                     <Text>Rød Høne</Text>
@@ -215,6 +232,17 @@ const styles = StyleSheet.create({
   navntittel: {
     flexDirection: 'row',
     justifyContent: 'space-between'
+  },
+  toolbar: {
+    height: 60,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'grey'
+  },
+  toolbarFont: {
+    fontSize:20,
+    fontWeight: 'bold',
+    color: 'white'
   }
-
 })

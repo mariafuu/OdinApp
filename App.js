@@ -12,6 +12,7 @@ import Appen from './app/components/Appen/Appen.js';
 import Tips from './app/components/Appen/Tips.js';
 import Feide from './app/components/Appen/Feide.js';
 import TestPost from './app/components/Appen/TestPost.js';
+import Meny from './app/components/Appen/Meny.js';
 
 import Forum from './app/components/Forum/Forum.js';
 import Subforum from './app/components/Forum/Subforum.js';
@@ -30,11 +31,11 @@ export default class Odin extends Component {
     super();
     this.state ={
       previousScreen: Appen,
-      currentScreen: VideoRessurs
+      currentScreen: SearchResult
     }
     this.screens = {
       Forside, Profil, NyPost, Login, Favoritter, SearchResult, Appen, Tips, Feide,
-      Forum, Subforum, Forumpost, TestPost,
+      Forum, Subforum, Forumpost, TestPost, Meny,
       DokumentRessurs, LydRessurs, NyRessurs, PresentasjonRessurs, Ressursbank,
       RessursKategori, VideoRessurs
     }
@@ -44,30 +45,11 @@ export default class Odin extends Component {
     this.setState ({currentScreen: this.screens[screenName]})
   }
 
-  skjermBytteNyPost = (screenName, nyKat, nyTittel, nyInnlegg, nyTag) => {
-    this.setState ({currentScreen: this.screens[screenName]})
-    TestPost.setState ({})
-  }
 
   render(){
       return(
         <View style={{flex:1}}>
-          <View style={styles.toolbar}>
-            <View style={{flex:1}}>
-              <Text style={styles.toolbarFont}>Meny</Text>
-            </View>
-            <View style={{flex:4}}>
-              <Text style={styles.toolbarFont}>
-                Dette vil bli en toolbar!
-              </Text>
-            </View>
-            <View style={{flex:1}}>
-              <Text style={styles.toolbarFont}>Søk</Text>
-            </View>
-          </View>
-          <View style={{flex:8}}>
             <this.state.currentScreen skjermBytte={this.skjermBytte} />
-          </View>
         </View>
       );
     }

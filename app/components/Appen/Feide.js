@@ -24,7 +24,7 @@ export default class Feide extends Component {
           <View style={styles.loginGreie}>
             <Picker
               selectedValue={this.state.language}
-              style={{ height: 50, width: 200}}
+              style={{ height: 50, width: 200, backgroundColor: 'white'}}
               onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
                 <Picker.Item label="Velg..." value="velg" />
                 <Picker.Item label="UiA" value="uia" />

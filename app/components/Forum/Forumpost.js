@@ -45,6 +45,25 @@ export default class Forumpost extends Component {
     return (
 
       <ScrollView style={styles.background}>
+      <View style={styles.toolbar}>
+        <TouchableOpacity
+          style={{flex:1}}
+          onPress={() => this.props.skjermBytte('Meny')}>
+            <Text style={styles.toolbarFont}>Meny</Text>
+        </TouchableOpacity>
+        <View style={{flex:4}}>
+          <Text style={styles.toolbarFont}>
+            Dette vil bli en toolbar!
+          </Text>
+        </View>
+        <TouchableOpacity
+          style={{flex:1}}
+          onPress={() => this.props.skjermBytte('SearchResult')}>
+            <Text style={styles.toolbarFont}>Søk</Text>
+        </TouchableOpacity>
+      </View>
+
+
         <View style={styles.mainPost}>
           <View>
             <Text>I klasserommet</Text>
@@ -299,6 +318,18 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: 'black',
     fontWeight: 'bold'
+  },
+  toolbar: {
+    height: 60,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'grey'
+  },
+  toolbarFont: {
+    fontSize:20,
+    fontWeight: 'bold',
+    color: 'white'
   }
 
 })
