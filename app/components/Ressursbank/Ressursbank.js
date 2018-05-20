@@ -64,7 +64,7 @@ export default class Ressursbank extends Component {
 const styles = StyleSheet.create({
   background: {
     flex:1,
-    backgroundColor: '#00CED1'
+    backgroundColor: '#e8f8fd'
   },
   newsView: {
     flex:1,
@@ -81,14 +81,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     borderColor: '#4682b4',
     borderRadius: 4,
-    borderWidth: 6
+    borderWidth: 6,
+    marginLeft: 5,
+    marginTop: 5,
+    padding: 10
   },
   toolbar: {
     height: 60,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'grey'
+    backgroundColor: '#74d4f6'
   },
   toolbarFont: {
     fontSize:20,
