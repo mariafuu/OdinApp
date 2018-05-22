@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableHighlight, TouchableOpacity, TextInput, Switch } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableHighlight, TouchableOpacity, TextInput, Switch, Hr} from 'react-native';
+
 
 export default class Ressursbank extends Component {
   constructor(){
@@ -22,7 +23,7 @@ export default class Ressursbank extends Component {
         </TouchableOpacity>
         <View style={{flex:4}}>
           <Text style={styles.toolbarFont}>
-            Dette vil bli en toolbar!
+            Ressursbank
           </Text>
         </View>
         <TouchableOpacity
@@ -32,29 +33,50 @@ export default class Ressursbank extends Component {
         </TouchableOpacity>
       </View>
 
-      <View style={styles.overskriftBox}>
-        <Text style={styles.overskrift}>Søkeresultat</Text>
-      </View>
-      <ScrollView style={styles.favorittliste}>
-        <View style={styles.favorittItem}>
+
+      <ScrollView style={styles.ressursListe}>
+        <View style={styles.ressursKategori}>
           <TouchableOpacity
           onPress={() => this.props.skjermBytte('VideoRessurs')}>
-            <Text>Video</Text>
+            <Text>I skolegården</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.favorittTittel}
+          <TouchableOpacity style={styles.ressursTittel}
           onPress={() => this.props.skjermBytte('VideoRessurs')}>
             <Text>Hva gjør jeg når noen krangler?</Text>
           </TouchableOpacity>
+          <TouchableOpacity style={styles.ressursTittel}>
+            <Text>Hvordan håndtere utfrysing?</Text>
+          </TouchableOpacity>
+
         </View>
 
-        <View style={styles.favorittItem}>
+        <View style={styles.ressursKategori}>
           <TouchableOpacity>
-            <Text>Dokument</Text>
+            <Text>I klasserommet</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.favorittTittel}>
+          <TouchableOpacity style={styles.ressursTittel}>
             <Text>Kan jeg si dette til ei jente i klassen?</Text>
           </TouchableOpacity>
+          <TouchableOpacity style={styles.ressursTittel}>
+            <Text>Mobbing - enkelt forklart for barn</Text>
+          </TouchableOpacity>
+
         </View>
+
+        <View style={styles.ressursKategori}>
+          <TouchableOpacity>
+            <Text>Foreldremøte</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.ressursTittel}>
+            <Text>Hvordan snakke med foreldre om at deres barn mobber</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.ressursTittel}>
+            <Text>Hvordan skal foreldre involveres i mobbesaker?</Text>
+          </TouchableOpacity>
+
+        </View>
+
+
         </ScrollView>
       </View>
     );
@@ -62,41 +84,42 @@ export default class Ressursbank extends Component {
 }
 
 const styles = StyleSheet.create({
+
+
   background: {
     flex:1,
     backgroundColor: '#e8f8fd'
   },
-  newsView: {
-    flex:1,
-    backgroundColor: 'blue',
-    padding:5
-  },
-  newsText: {
-    color: 'white'
-  },
-  container1: {
-    flex:2,
-    flexDirection: 'row',
-    backgroundColor: '#00CED1',
-    justifyContent: 'space-between',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 6,
-    marginLeft: 5,
-    marginTop: 5,
-    padding: 10
-  },
+
   toolbar: {
     height: 60,
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: '#74d4f6'
   },
   toolbarFont: {
     fontSize:20,
     fontWeight: 'bold',
-    color: 'white'
-  }
+    color: 'white',
 
-})
+  },
+
+ressursListe: {
+  padding: 10,
+  margin: 10,
+  backgroundColor: '#858fa0'
+},
+
+ressursKategori: {
+  marginTop: 5,
+  marginBottom: 5,
+  backgroundColor: '#779ad6',
+  fontSize: 20,
+  color: '#011123'
+},
+
+ressursTittel: {
+
+}
+});
