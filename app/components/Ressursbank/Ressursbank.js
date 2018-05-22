@@ -35,43 +35,61 @@ export default class Ressursbank extends Component {
 
 
       <ScrollView style={styles.ressursListe}>
-        <View style={styles.ressursKategori}>
+        <View style={styles.ressursKategoriBlokk}>
           <TouchableOpacity
           onPress={() => this.props.skjermBytte('VideoRessurs')}>
-            <Text>I skolegården</Text>
+            <Text style={styles.ressursKategoriNavn}>I skolegården</Text>
           </TouchableOpacity>
+          <View
+            style={{
+              borderBottomColor: '#1ba6cf',
+              borderBottomWidth: 1,
+            }}
+          />
           <TouchableOpacity style={styles.ressursTittel}
           onPress={() => this.props.skjermBytte('VideoRessurs')}>
-            <Text>Hva gjør jeg når noen krangler?</Text>
+            <Text>✩ 🗣 Hva gjør jeg når noen krangler?</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.ressursTittel}>
-            <Text>Hvordan håndtere utfrysing?</Text>
+            <Text>✩ 📽 Hvordan håndtere utfrysing?</Text>
           </TouchableOpacity>
 
         </View>
 
-        <View style={styles.ressursKategori}>
+        <View style={styles.ressursKategoriBlokk}>
           <TouchableOpacity>
-            <Text>I klasserommet</Text>
+            <Text style={styles.ressursKategoriNavn}>I klasserommet</Text>
+          </TouchableOpacity>
+          <View
+            style={{
+              borderBottomColor: '#1ba6cf',
+              borderBottomWidth: 1,
+            }}
+          />
+          <TouchableOpacity style={styles.ressursTittel}>
+            <Text>✩ 🗣 Kan jeg si dette til ei jente i klassen?</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.ressursTittel}>
-            <Text>Kan jeg si dette til ei jente i klassen?</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.ressursTittel}>
-            <Text>Mobbing - enkelt forklart for barn</Text>
+            <Text>★ 📽 Mobbing - enkelt forklart for barn</Text>
           </TouchableOpacity>
 
         </View>
 
-        <View style={styles.ressursKategori}>
+        <View style={styles.ressursKategoriBlokk}>
           <TouchableOpacity>
-            <Text>Foreldremøte</Text>
+            <Text style={styles.ressursKategoriNavn}>Foreldremøte</Text>
+          </TouchableOpacity>
+          <View
+            style={{
+              borderBottomColor: '#1ba6cf',
+              borderBottomWidth: 1,
+            }}
+          />
+          <TouchableOpacity style={styles.ressursTittel}>
+            <Text>✩ 📋 Hvordan snakke med foreldre om at deres barn mobber</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.ressursTittel}>
-            <Text>Hvordan snakke med foreldre om at deres barn mobber</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.ressursTittel}>
-            <Text>Hvordan skal foreldre involveres i mobbesaker?</Text>
+            <Text>✩ 📋 Hvordan skal foreldre involveres i mobbesaker?</Text>
           </TouchableOpacity>
 
         </View>
@@ -88,7 +106,7 @@ const styles = StyleSheet.create({
 
   background: {
     flex:1,
-    backgroundColor: '#e8f8fd'
+    backgroundColor: '#4682b4'
   },
 
   toolbar: {
@@ -96,30 +114,39 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#74d4f6'
+    backgroundColor: '#e0ffff'
   },
   toolbarFont: {
     fontSize:20,
     fontWeight: 'bold',
-    color: 'white',
+    color: '#1ba6cf',
 
   },
 
 ressursListe: {
-  padding: 10,
-  margin: 10,
-  backgroundColor: '#858fa0'
+  paddingTop: 10,
+  marginTop: 10,
+  marginBottom: 10
+
 },
 
-ressursKategori: {
+ressursKategoriBlokk: {
   marginTop: 5,
   marginBottom: 5,
-  backgroundColor: '#779ad6',
+  padding: 5,
+  backgroundColor: 'rgba(237, 249, 255, 0.5)',
+
+},
+
+ressursKategoriNavn: {
+  color: '#000f1c',
   fontSize: 20,
-  color: '#011123'
+
 },
 
 ressursTittel: {
 
 }
+
+
 });
