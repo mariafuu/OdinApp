@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
   },
   svarBox: {
     flex: 4,
-    backgroundColor: '#e0ffff',
+    backgroundColor: 'rgba(237, 249, 255, 0.5)',
     padding: 5,
     borderColor: '#4682b4',
     borderRadius: 4,
@@ -291,7 +291,7 @@ const styles = StyleSheet.create({
     padding: 5
   },
   mainPost: {
-    backgroundColor: '#e0ffff',
+    backgroundColor: 'rgba(237, 249, 255, 0.5)',
     padding: 10,
     borderColor: '#4682b4',
     borderRadius: 4,
@@ -305,7 +305,7 @@ const styles = StyleSheet.create({
   },
   box1: {
     flex: 1,
-    backgroundColor: '#fcc6c2',
+    backgroundColor: 'rgba(237, 249, 255, 0.5)',
     padding:10,
     justifyContent: 'center',
     alignItems: 'center',
