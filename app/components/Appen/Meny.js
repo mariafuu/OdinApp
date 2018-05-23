@@ -64,6 +64,12 @@ export default class Meny extends Component {
             </View>
 
             <View style={styles.favorittItem}>
+              <TouchableOpacity onPress={() => this.props.skjermBytte('Forum')}>
+                <Text>Forum</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.favorittItem}>
               <TouchableOpacity onPress={() => this.props.skjermBytte('SearchResult')}>
                 <Text>Søk</Text>
               </TouchableOpacity>
