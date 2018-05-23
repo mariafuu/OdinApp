@@ -16,9 +16,19 @@ export default class Feide extends Component {
   render() {
     return (
       <View style={styles.background}>
+
+      <View style={styles.toolbar}>
+        <View style={{flex:4}}>
+          <Text style={styles.toolbarFont}>
+            Logg inn med FEIDE
+          </Text>
+        </View>
+      </View>
         <View style={styles.logoContainer}>
         </View>
-
+        <View>
+          <Text style={styles.mellomOverskrift}>Velg institusjon:</Text>
+        </View>
         <View style={styles.mainField}>
 
           <View style={styles.loginGreie}>
@@ -26,7 +36,6 @@ export default class Feide extends Component {
               selectedValue={this.state.language}
               style={{ height: 50, width: 200, backgroundColor: 'white'}}
               onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
-                <Picker.Item label="Velg..." value="velg" />
                 <Picker.Item label="UiA" value="uia" />
                 <Picker.Item label="NTNU" value="ntnu" />
                 <Picker.Item label="UiO" value="uio" />
@@ -38,7 +47,7 @@ export default class Feide extends Component {
               style={styles.vanligKnapp}
               onPress={() => this.props.skjermBytte('Login')}
             >
-              <Text>Ok</Text>
+              <Text>Neste</Text>
             </TouchableOpacity>
           </View>
 
@@ -71,12 +80,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   vanligKnapp: {
-    backgroundColor: '#fcc6c2',
+    backgroundColor: 'rgba(237, 249, 255, 0.5)',
     height: 40,
     width: 100,
     padding: 5,
+    marginLeft: 5,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderColor: '#fcc6c2',
+    borderRadius: 50,
+    borderWidth: 3,
+
   },
   buttonBox: {
 
@@ -93,6 +107,28 @@ const styles = StyleSheet.create({
   logo: {
     width: 100,
     height: 100
+  },
+
+  toolbar: {
+    height: 60,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#e0ffff',
+    paddingTop: 20,
+  },
+  toolbarFont: {
+    fontSize:30,
+    fontWeight: 'bold',
+    color: '#1ba6cf',
+    textAlign: 'center'
+
+  },
+
+  mellomOverskrift: {
+    color: '#02013a',
+    fontSize: 20,
+    margin: 5
   }
 
 })

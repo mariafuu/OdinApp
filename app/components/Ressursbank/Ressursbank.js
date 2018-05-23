@@ -139,7 +139,7 @@ ressursKategoriBlokk: {
 },
 
 ressursKategoriNavn: {
-  color: '#000f1c',
+  color: '#02013a',
   fontSize: 20,
 
 },

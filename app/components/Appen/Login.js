@@ -16,9 +16,18 @@ export default class Login extends Component {
   render() {
     return (
       <View style={styles.background}>
+      <View style={styles.toolbar}>
+        <View style={{flex:4}}>
+          <Text style={styles.toolbarFont}>
+            Logg inn med FEIDE
+          </Text>
+        </View>
+      </View>
         <View style={styles.logoContainer}>
         </View>
-
+        <View>
+          <Text style={styles.mellomOverskrift}>Din konto:</Text>
+        </View>
         <View style={styles.mainField}>
 
           <View style={styles.loginGreie}>
@@ -44,18 +53,18 @@ export default class Login extends Component {
           </View>
 
           <View>
-            <View>
-              <TouchableOpacity
-                style={styles.vanligKnapp}
-                onPress={() => this.props.skjermBytte('Forside')}
-              >
-                <Text>Logg inn</Text>
-                </TouchableOpacity>
-            </View>
+
           </View>
 
         </View>
-
+        <View>
+          <TouchableOpacity
+            style={styles.vanligKnapp}
+            onPress={() => this.props.skjermBytte('Forside')}
+          >
+            <Text>Logg inn</Text>
+            </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -67,12 +76,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#4682b4'
   },
   textBox: {
-    backgroundColor: '#c2dbfc',
-    padding: 10,
-    height: 50
+    backgroundColor: 'rgba(237, 249, 255, 0.5)',
+    paddingLeft: 10,
+    height: 45,
+    marginLeft: 10,
+    marginBottom: 5
   },
   inputBox: {
-    padding: 10,
+    paddingLeft: 5,
+    paddingTop: 5,
+    marginLeft: 5,
     width: 150,
     height: 50,
     backgroundColor: 'white'
@@ -83,12 +96,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   vanligKnapp: {
-    backgroundColor: '#fcc6c2',
+    backgroundColor: 'rgba(237, 249, 255, 0.5)',
     height: 40,
     width: 100,
     padding: 5,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderColor: '#fcc6c2',
+    borderRadius: 50,
+    borderWidth: 3,
+    marginLeft: 190,
+    marginBottom: 140
+
   },
   buttonBox: {
 
@@ -105,6 +124,28 @@ const styles = StyleSheet.create({
   logo: {
     width: 100,
     height: 100
+  },
+
+  toolbar: {
+    height: 60,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#e0ffff',
+    paddingTop: 20,
+  },
+  toolbarFont: {
+    fontSize:30,
+    fontWeight: 'bold',
+    color: '#1ba6cf',
+    textAlign: 'center'
+
+  },
+
+  mellomOverskrift: {
+    color: '#02013a',
+    fontSize: 20,
+    margin: 5
   }
 
 })

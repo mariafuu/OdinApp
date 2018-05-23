@@ -30,7 +30,7 @@ export default class SearchResult extends Component {
         </TouchableOpacity>
         <View style={{flex:4}}>
           <Text style={styles.toolbarFont}>
-            Dette vil bli en toolbar!
+            Søkeresultater
           </Text>
         </View>
         <TouchableOpacity
@@ -41,24 +41,22 @@ export default class SearchResult extends Component {
       </View>
 
 
-          <View style={styles.overskriftBox}>
-            <Text style={styles.overskrift}>Søkeresultat</Text>
-          </View>
+
           <ScrollView style={styles.favorittliste}>
             <View style={styles.favorittItem}>
               <TouchableOpacity
               onPress={() => this.props.skjermBytte('VideoRessurs')}>
-                <Text>Video</Text>
+                <Text>📽</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.favorittTittel}
               onPress={() => this.props.skjermBytte('VideoRessurs')}>
-                <Text>Hva gjør jeg når noen krangler?</Text>
+                <Text>Hva gjør jeg når noen slår?</Text>
               </TouchableOpacity>
             </View>
 
             <View style={styles.favorittItem}>
               <TouchableOpacity>
-                <Text>Dokument</Text>
+                <Text>📋</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.favorittTittel}>
                 <Text>Kan jeg si dette til ei jente i klassen?</Text>
@@ -87,15 +85,14 @@ const styles = StyleSheet.create({
     padding: 5
   },
   favorittliste: {
-    padding: 20
+    paddingTop: 20
   },
   favorittItem: {
     flexDirection: 'row',
-    padding: 10,
-    backgroundColor: '#e0ffff',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 2
+    marginTop: 5,
+    marginBottom: 5,
+    padding: 5,
+    backgroundColor: 'rgba(237, 249, 255, 0.5)',
   },
   overskriftBox: {
     backgroundColor: '#e0ffff',
@@ -151,12 +148,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'grey'
+    backgroundColor: '#e0ffff'
   },
   toolbarFont: {
     fontSize:20,
     fontWeight: 'bold',
-    color: 'white'
+    color: '#1ba6cf'
   }
 
 })

@@ -101,11 +101,13 @@ const styles = StyleSheet.create({
   },
   overskriftBox: {
     backgroundColor: '#e0ffff',
+
     padding: 10
   },
   overskrift: {
     fontSize: 30,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: '#1ba6cf'
   },
   container1: {
     flex:2,

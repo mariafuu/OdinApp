@@ -35,6 +35,13 @@ export default class Appen extends Component {
     return (
 
       <View style={styles.background}>
+      <View style={styles.toolbar}>
+        <View style={{flex:4}}>
+          <Text style={styles.toolbarFont}>
+            MobbeFri
+          </Text>
+        </View>
+      </View>
             <View style={styles.container1}>
               <View style={styles.frontBox}>
               </View>
@@ -44,14 +51,14 @@ export default class Appen extends Component {
               style={styles.box1}
               onPress={this.onPress1}
               >
-                  <Text style={styles.knappFont}>Hvordan varsle</Text>
+                  <Text style={styles.knappFont}>Nyheter</Text>
               </TouchableOpacity>
 
               <TouchableOpacity
                 style={styles.box1}
                 onPress={this.onPress2}
               >
-                  <Text style={styles.knappFont}>Om appen og OdinStiftelsen</Text>
+                  <Text style={styles.knappFont}>Tips & Råd</Text>
               </TouchableOpacity>
               </View>
 
@@ -62,7 +69,7 @@ export default class Appen extends Component {
               onPress={this.onPress3}
               >
                 <View>
-                  <Text style={styles.knappFont}>Hva skulle det stå her?</Text>
+                  <Text style={styles.knappFont}>Sjekkliste varsling</Text>
                 </View>
               </TouchableOpacity>
 
@@ -71,7 +78,7 @@ export default class Appen extends Component {
               onPress={this.onPress4}
               >
                 <View>
-                  <Text style={styles.knappFont}>Tips og råd</Text>
+                  <Text style={styles.knappFont}>Om appen</Text>
                 </View>
               </TouchableOpacity>
             </View>
@@ -83,9 +90,11 @@ export default class Appen extends Component {
             <TouchableOpacity
               style={styles.loggInn}
               onPress={() => this.props.skjermBytte('Feide')}>
-                <Text style={{color: 'white', fontWeight: 'bold', fontSize: 20}}>
-                  Logg inn
+                <Text style={{color: '#1ba6cf', fontWeight: 'bold', fontSize: 20}}>
+                  Logg inn{"\n"}
                 </Text>
+
+                <Text style={{color: '#1ba6cf'}}>For å gå til ressursbank og delingsarena</Text>
             </TouchableOpacity>
       </View>
     );
@@ -95,13 +104,12 @@ export default class Appen extends Component {
 const styles = StyleSheet.create({
   background: {
     flex:1,
-    backgroundColor: '#00CED1'
+    backgroundColor: '#4682b4'
   },
   container1: {
     flex:9,
     justifyContent: 'space-between',
-    borderRadius: 4,
-    borderWidth: 6
+    borderRadius: 10,
   },
   frontBox: {
     flex: 1,
@@ -109,18 +117,20 @@ const styles = StyleSheet.create({
   },
   loggInn: {
     flex: 1,
-    backgroundColor: '#4682b4',
+    backgroundColor: '#e0ffff',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    padding: 10
   },
   box1: {
     flex: 1,
-    backgroundColor: '#fcc6c2',
+    backgroundColor: 'rgba(237, 249, 255, 0.5)',
     padding:10,
+    margin: 3,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: '#4682b4',
-    borderRadius: 4,
+    borderColor: '#fcc6c2',
+    borderRadius: 300,
     borderWidth: 3
   },
   knappFont: {
@@ -130,6 +140,22 @@ const styles = StyleSheet.create({
   },
   mainBox: {
     flex:10
-  }
+  },
+
+  toolbar: {
+    height: 100,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#e0ffff',
+    paddingTop: 20,
+  },
+  toolbarFont: {
+    fontSize:50,
+    fontWeight: 'bold',
+    color: '#1ba6cf',
+    textAlign: 'center'
+
+  },
 
 })

@@ -42,7 +42,7 @@ export default class Favoritter extends Component {
         </TouchableOpacity>
         <View style={{flex:4}}>
           <Text style={styles.toolbarFont}>
-            Dette vil bli en toolbar!
+            Mine Favoritter
           </Text>
         </View>
         <TouchableOpacity
@@ -51,11 +51,6 @@ export default class Favoritter extends Component {
             <Text style={styles.toolbarFont}>Søk</Text>
         </TouchableOpacity>
       </View>
-
-
-          <View style={styles.overskriftBox}>
-            <Text style={styles.overskrift}>Dine favoritter</Text>
-          </View>
           <ScrollView style={styles.favorittliste}>
             <View style={styles.favorittItem}>
               <TouchableOpacity onPress={this.ShowAlertDialog}>
@@ -101,7 +96,7 @@ export default class Favoritter extends Component {
                   />
               </TouchableOpacity>
               <TouchableOpacity style={styles.favorittTittel}>
-                <Text>Hva gjør jeg når noen krangler?</Text>
+                <Text>Sjekkliste varsling</Text>
               </TouchableOpacity>
             </View>
 
@@ -113,7 +108,7 @@ export default class Favoritter extends Component {
                   />
               </TouchableOpacity>
               <TouchableOpacity style={styles.favorittTittel}>
-                <Text>Hva gjør jeg når noen krangler?</Text>
+                <Text>Mobbesak opp i lagmanssretten</Text>
               </TouchableOpacity>
             </View>
 
@@ -125,7 +120,7 @@ export default class Favoritter extends Component {
                   />
               </TouchableOpacity>
               <TouchableOpacity style={styles.favorittTittel}>
-                <Text>Hva gjør jeg når noen krangler?</Text>
+                <Text>Hvordan gå frem for å varsle</Text>
               </TouchableOpacity>
             </View>
 
@@ -137,7 +132,7 @@ export default class Favoritter extends Component {
                   />
               </TouchableOpacity>
               <TouchableOpacity style={styles.favorittTittel}>
-                <Text>Hva gjør jeg når noen krangler?</Text>
+                <Text>Læreres etiske plattform</Text>
               </TouchableOpacity>
             </View>
 
@@ -149,7 +144,7 @@ export default class Favoritter extends Component {
                   />
               </TouchableOpacity>
               <TouchableOpacity style={styles.favorittTittel}>
-                <Text>Hva gjør jeg når noen krangler?</Text>
+                <Text>Taushetsplikten kort og enkelt forklart</Text>
               </TouchableOpacity>
             </View>
 
@@ -161,7 +156,7 @@ export default class Favoritter extends Component {
                   />
               </TouchableOpacity>
               <TouchableOpacity style={styles.favorittTittel}>
-                <Text>Hva gjør jeg når noen krangler?</Text>
+                <Text>Oppgavesett digital mobbing </Text>
               </TouchableOpacity>
             </View>
           </ScrollView>
@@ -182,18 +177,18 @@ const styles = StyleSheet.create({
     padding: 3
   },
   favorittTittel: {
-    padding: 5
+    padding: 5,
+    marginRight: 5
   },
   favorittliste: {
-    padding: 20
+    paddingTop: 20,
   },
   favorittItem: {
     flexDirection: 'row',
-    padding: 10,
-    backgroundColor: '#e0ffff',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 2
+    marginTop: 5,
+    marginBottom: 5,
+    padding: 5,
+    backgroundColor: 'rgba(237, 249, 255, 0.5)',
   },
   overskriftBox: {
     backgroundColor: '#e0ffff',
@@ -249,12 +244,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'grey'
+    backgroundColor: '#e0ffff'
   },
   toolbarFont: {
     fontSize:20,
     fontWeight: 'bold',
-    color: 'white'
+    color: '#1ba6cf'
   }
 
 })
