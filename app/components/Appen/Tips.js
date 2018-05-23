@@ -13,18 +13,6 @@ export default class Forside extends Component {
   onPress1(){
     console.log('Box 1 Pressed');
   }
-  onPress2(){
-    console.log('Box 2 pressed');
-  }
-  onPress3(){
-    console.log('Box 3 Pressed');
-  }
-  onPress4(){
-    console.log('Box 4 pressed');
-  }
-  onPress5(){
-    console.log('Box 5 pressed');
-  }
   onChangeText1(value){
     this.setState({
       textValue:value
@@ -35,195 +23,139 @@ export default class Forside extends Component {
     return (
 
       <View style={styles.background}>
-            <View style={styles.newsView}>
-              <Text style={styles.newsText}>Hello!</Text>
-              <Text style={styles.newsText}>Nyhetssaker som kan dukke opp</Text>
-            </View>
+      <View style={styles.toolbar}>
+        <TouchableOpacity
+          style={{flex:1}}
+          onPress={() => this.props.skjermBytte('Meny')}>
+            <Text style={styles.toolbarFont}>Meny</Text>
+        </TouchableOpacity>
+        <View style={{flex:4}}>
+          <Text style={styles.toolbarFont}>
+            Ressursbank
+          </Text>
+        </View>
+        <TouchableOpacity
+          style={{flex:1}}
+          onPress={() => this.props.skjermBytte('SearchResult')}>
+            <Text style={styles.toolbarFont}>Søk</Text>
+        </TouchableOpacity>
+      </View>
 
-            <View style={styles.container1}>
-              <TouchableOpacity
-              style={styles.box1}
-              onPress={() => this.props.skjermBytte('NyPost')}
-              >
-                <View style={styles.box1}>
-                  <Text>Ny post</Text>
-                </View>
-              </TouchableOpacity>
 
-              <TouchableOpacity
-                style={styles.boxFav}
-                onPress={() => this.props.skjermBytte('Favoritter')}
-              >
-                <View>
-                  <Image
-                    style={{width: 50, height: 50}}
-                    source={require('../pictures/favourites_star.png')}
-                    />
-                    </View>
-                <View>
-                    <Text>Favoritter</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
+      <ScrollView style={styles.ressursListe}>
+        <View style={styles.ressursKategoriBlokk}>
+          <TouchableOpacity
+          onPress={() => this.props.skjermBytte('VideoRessurs')}>
+            <Text style={styles.ressursKategoriNavn}>I skolegården</Text>
+          </TouchableOpacity>
+          <View
+            style={{
+              borderBottomColor: '#1ba6cf',
+              borderBottomWidth: 1,
+            }}
+          />
+          <TouchableOpacity style={styles.ressursTittel}
+          onPress={() => this.props.skjermBytte('VideoRessurs')}>
+            <Text>✩ 🗣 Hva gjør jeg når noen krangler?</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.ressursTittel}>
+            <Text>✩ 📽 Hvordan håndtere utfrysing?</Text>
+          </TouchableOpacity>
 
-            <View style={styles.container2}>
-              <TouchableOpacity
-              style={styles.smallBox}
-              onPress={() => this.props.skjermBytte('Lovverk')}
-              >
-                <View>
-                  <Text>Lovverk</Text>
-                </View>
-              </TouchableOpacity>
+        </View>
 
-              <TouchableOpacity
-              style={styles.smallBox}
-              onPress={() => this.props.skjermBytte('Ressursbank')}
-              >
-                <View>
-                  <Text>Ressursbank</Text>
-                </View>
-              </TouchableOpacity>
+        <View style={styles.ressursKategoriBlokk}>
+          <TouchableOpacity>
+            <Text style={styles.ressursKategoriNavn}>I klasserommet</Text>
+          </TouchableOpacity>
+          <View
+            style={{
+              borderBottomColor: '#1ba6cf',
+              borderBottomWidth: 1,
+            }}
+          />
+          <TouchableOpacity style={styles.ressursTittel}>
+            <Text>✩ 🗣 Kan jeg si dette til ei jente i klassen?</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.ressursTittel}>
+            <Text>★ 📽 Mobbing - enkelt forklart for barn</Text>
+          </TouchableOpacity>
 
-              <TouchableOpacity
-              style={styles.smallBox}
-              onPress={() => this.props.skjermBytte('Tips')}
-              >
-                <View>
-                  <Text>Tips og råd</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
+        </View>
 
-            <View style={styles.mainBox}>
-            <ScrollView style={styles.contentBox}>
-                <View style={styles.postBox}>
-                  <Text>Jeg får ikke støtte fra kollegaene til å håndtere
-                  en vanskelig mobbesituasjon</Text>
-                  <View style={styles.navntittel}>
-                    <Text>Blå katt</Text>
-                    <Text>'02.05.18'</Text>
-                  </View>
-                  <View>
-                    <Text>Jeg har prøvd løse en mobbesituasjon, men den er
-                    kompleks fordi begge barns foreldre mener deres barn er den
-                    utsatte. Jeg trenger støtte fra kollegaer og rektor for å
-                    komme noen vei, men de mener skolen har gjort det de kunne.
-                    Hva skal jeg gjøre?</Text>
-                  </View>
-                </View>
+        <View style={styles.ressursKategoriBlokk}>
+          <TouchableOpacity>
+            <Text style={styles.ressursKategoriNavn}>Foreldremøte</Text>
+          </TouchableOpacity>
+          <View
+            style={{
+              borderBottomColor: '#1ba6cf',
+              borderBottomWidth: 1,
+            }}
+          />
+          <TouchableOpacity style={styles.ressursTittel}>
+            <Text>✩ 📋 Hvordan snakke med foreldre om at deres barn mobber</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.ressursTittel}>
+            <Text>✩ 📋 Hvordan skal foreldre involveres i mobbesaker?</Text>
+          </TouchableOpacity>
 
-                <View style={styles.postBox}>
-                  <Text>Tittel på innlegg</Text>
-                  <View style={styles.navntittel}>
-                    <Text>Blå katt</Text>
-                    <Text>Dato</Text>
-                  </View>
-                  <View>
-                    <Text>Teksten i innlegget. Her bør det stå masse greier slik at vi får testet hva som skjer når det står mye her. Skal alt vises eller bare så så mange linjer?</Text>
-                  </View>
-                </View>
+        </View>
 
-                <View style={styles.postBox}>
-                  <Text>Hvordan hjelpe et barn som har lukket seg?</Text>
-                  <View style={styles.navntittel}>
-                    <Text>Rød Høne</Text>
-                    <Text>'30.04.18'</Text>
-                  </View>
-                  <View>
-                    <Text>Et barn i klassen min har det ikke greit, barnet
-                    kommer fra et litt tustelig hjem og blir ofte mobbet pga
-                    klær, bustet hår, at ingen ser foreldrene o.l. Jeg forsøker
-                    å løse situasjonene, men det utsatte barnet har helt lukket
-                    seg og sier nesten aldri et ord. Barnet sitter stille og
-                    hører, men responderer særs lite. Har noen erfaring med
-                    dette? Hvordan kan jeg hjelpe dette fine lille barnet?</Text>
-                  </View>
-                </View>
-            </ScrollView>
-            </View>
 
+        </ScrollView>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+
+
   background: {
     flex:1,
-    backgroundColor: '#00CED1'
+    backgroundColor: '#4682b4'
   },
-  newsView: {
-    flex:1,
-    backgroundColor: 'blue',
-    padding:5
-  },
-  newsText: {
-    color: 'white'
-  },
-  container1: {
-    flex:2,
-    flexDirection: 'row',
-    backgroundColor: '#00CED1',
-    justifyContent: 'space-between',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 6
-  },
-  container2: {
-    flex:1,
-    flexDirection: 'row',
-    backgroundColor: '#e0ffff',
-    justifyContent: 'space-between',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 6
-  },
-  box1: {
-    flex: 1,
-    backgroundColor: '#fcc6c2',
-    padding:10,
-    justifyContent: 'center',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 3
-  },
-  boxFav: {
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: '#fcc6c2',
-    padding:10,
-    justifyContent: 'center',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 3
-  },
-  box3: {
-    flex:1
-  },
-  smallBox: {
-    flex:1,
-    backgroundColor:'#fdddda',
-    padding:2,
-    justifyContent: 'center'
-  },
-  mainBox: {
-    flex:10
-  },
-  contentBox: {
-    flex:1
-  },
-  postBox: {
-    height: 150,
-    padding: 3,
-    backgroundColor: '#e0ffff',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 6
-  },
-  navntittel: {
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  }
 
-})
+  toolbar: {
+    height: 60,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#e0ffff'
+  },
+  toolbarFont: {
+    fontSize:20,
+    fontWeight: 'bold',
+    color: '#1ba6cf',
+    textAlign: 'center'
+
+  },
+
+ressursListe: {
+  paddingTop: 10,
+  marginTop: 10,
+  marginBottom: 10
+
+},
+
+ressursKategoriBlokk: {
+  marginTop: 5,
+  marginBottom: 5,
+  padding: 5,
+  backgroundColor: 'rgba(237, 249, 255, 0.5)',
+
+},
+
+ressursKategoriNavn: {
+  color: '#02013a',
+  fontSize: 20,
+
+},
+
+ressursTittel: {
+
+}
+
+
+});

@@ -112,7 +112,7 @@ export default class Forumpost extends Component {
       transparent={false}
       visible={this.state.modalVisible}
       >
-        <View>
+        <View style={styles.background}>
           <View>
           </View>
 
@@ -209,8 +209,7 @@ export default class Forumpost extends Component {
 const styles = StyleSheet.create({
   background: {
     flex:1,
-    backgroundColor: '#4682b4',
-    padding: 15
+    backgroundColor: '#4682b4'
   },
   overskrift: {
     flexDirection: 'row'
@@ -262,7 +261,7 @@ const styles = StyleSheet.create({
     borderColor: '#4682b4'
   },
   svarKnapp:{
-    backgroundColor: '#fa9991',
+    backgroundColor: '#fcc6c2',
     height: 40,
     width: 100,
     padding: 5,
@@ -274,19 +273,19 @@ const styles = StyleSheet.create({
   },
   svartekst: {
     fontWeight: 'bold',
-    color: 'white',
+    color: 'black',
     fontSize: 30
   },
   vanligKnapp: {
-    backgroundColor: '#fcc6c2',
-    height: 40,
-    width: 100,
-    padding: 5,
+    flex: 1,
+    backgroundColor: 'rgba(237, 249, 255, 0.5)',
+    padding:10,
+    flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 3
+    borderColor: '#fcc6c2',
+    borderRadius: 15,
+    borderWidth: 3,
+    margin: 3
   },
   tekstInnhold: {
     padding: 5
