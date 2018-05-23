@@ -53,7 +53,7 @@ export default class Forumpost extends Component {
         </TouchableOpacity>
         <View style={{flex:4}}>
           <Text style={styles.toolbarFont}>
-            Dette vil bli en toolbar!
+            Delingsarena
           </Text>
         </View>
         <TouchableOpacity
@@ -324,12 +324,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'grey'
+    backgroundColor: '#e0ffff'
   },
   toolbarFont: {
     fontSize:20,
     fontWeight: 'bold',
-    color: 'white'
+    color: '#1ba6cf',
+    textAlign: 'center'
   }
 
 })

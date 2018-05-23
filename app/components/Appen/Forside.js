@@ -10,21 +10,7 @@ export default class Forside extends Component {
       switchValue: false
     }
   }
-  onPress1(){
-    console.log('Box 1 Pressed');
-  }
-  onPress2(){
-    console.log('Box 2 pressed');
-  }
-  onPress3(){
-    console.log('Box 3 Pressed');
-  }
-  onPress4(){
-    console.log('Box 4 pressed');
-  }
-  onPress5(){
-    console.log('Box 5 pressed');
-  }
+
   onChangeText1(value){
     this.setState({
       textValue:value
@@ -43,7 +29,7 @@ export default class Forside extends Component {
               </TouchableOpacity>
               <View style={{flex:4}}>
                 <Text style={styles.toolbarFont}>
-                  Dette vil bli en toolbar!
+                  Forside
                 </Text>
               </View>
               <TouchableOpacity
@@ -55,21 +41,21 @@ export default class Forside extends Component {
 
             <View style={styles.container1}>
               <TouchableOpacity
-              style={styles.box1}
+              style={styles.vanligKnapp}
               onPress={() => this.props.skjermBytte('NyPost')}
               >
                 <View>
-                  <Text>Ny post</Text>
+                  <Text>Nytt innlegg</Text>
                 </View>
               </TouchableOpacity>
 
               <TouchableOpacity
-                style={styles.boxFav}
+                style={styles.vanligKnapp}
                 onPress={() => this.props.skjermBytte('Favoritter')}
               >
                 <View>
                   <Image
-                    style={{width: 50, height: 50}}
+                    style={{width: 30, height: 30}}
                     source={require('../pictures/favourites_star.png')}
                     />
                 </View>
@@ -81,7 +67,7 @@ export default class Forside extends Component {
 
             <View style={styles.container2}>
               <TouchableOpacity
-              style={styles.smallBox}
+              style={styles.litenKnapp}
               onPress={() => this.props.skjermBytte('Lovverk')}
               >
                 <View>
@@ -90,7 +76,7 @@ export default class Forside extends Component {
               </TouchableOpacity>
 
               <TouchableOpacity
-              style={styles.smallBox}
+              style={styles.litenKnapp}
               onPress={() => this.props.skjermBytte('Ressursbank')}
               >
                 <View>
@@ -99,7 +85,7 @@ export default class Forside extends Component {
               </TouchableOpacity>
 
               <TouchableOpacity
-              style={styles.smallBox}
+              style={styles.litenKnapp}
               onPress={() => this.props.skjermBytte('Tips')}
               >
                 <View>
@@ -108,14 +94,44 @@ export default class Forside extends Component {
               </TouchableOpacity>
             </View>
 
+            <View>
+              <Text style={styles.feedTittel}>Nyeste innlegg:</Text>
+            </View>
+
+            <View
+              style={{
+                borderBottomColor: '#1ba6cf',
+                borderBottomWidth: 3,
+                shadowColor: 'rgb(255, 255, 255)',
+
+                shadowRadius: 0
+
+              }}
+            />
+            <View
+              style={{
+                borderBottomColor: '#FFFFFF',
+                borderBottomWidth: 1.5,
+
+
+              }}
+            />
+
+
             <View style={styles.mainBox}>
             <ScrollView style={styles.contentBox}>
                 <TouchableOpacity style={styles.postBox}>
                   <Text style={styles.postTittel}>Jeg får ikke støtte fra kollegaene til å håndtere
                   en vanskelig mobbesituasjon</Text>
-                  <View style={styles.navntittel}>
-                    <Text>Blå katt</Text>
-                    <Text>'02.05.18'</Text>
+                  <View
+                    style={{
+                      borderBottomColor: '#1ba6cf',
+                      borderBottomWidth: 1,
+                    }}
+                  />
+                  <View style={styles.navnTittelFelt}>
+                    <Text style={styles.navnTittel}>Blå katt</Text>
+                    <Text style={styles.navnTittel}>23.05.18</Text>
                   </View>
                   <View>
                     <Text>Jeg har prøvd løse en mobbesituasjon, men den er
@@ -126,22 +142,55 @@ export default class Forside extends Component {
                   </View>
                 </TouchableOpacity>
 
+                <View
+                  style={{
+                    borderBottomColor: '#fcc6c2',
+                    borderBottomWidth: 3,
+                    marginLeft: 40,
+                    marginRight: 40
+                  }}
+                />
+
                 <TouchableOpacity style={styles.postBox}>
-                  <Text style={styles.postTittel}>Tittel på innlegg</Text>
-                  <View style={styles.navntittel}>
-                    <Text>Blå katt</Text>
-                    <Text>Dato</Text>
+                  <Text style={styles.postTittel}>Slides nettmobbing universitetsnivå</Text>
+                  <View
+                    style={{
+                      borderBottomColor: '#1ba6cf',
+                      borderBottomWidth: 1,
+                    }}
+                  />
+                  <View style={styles.navnTittelFelt}>
+                    <Text style={styles.navnTittel}>Lilla Glass</Text>
+                    <Text style={styles.navnTittel}>23.05.18</Text>
                   </View>
                   <View>
-                    <Text>Teksten i innlegget. Her bør det stå masse greier slik at vi får testet hva som skjer når det står mye her. Skal alt vises eller bare så så mange linjer?</Text>
+                    <Text>Jeg brukte denne presentasjonen i går og syns det fungerte bra.
+                    Klassen responderte bra på det og, de følgte meg og stilte mange spørsmål.
+                    Det ble og debatt om hva som teller som mobbing, om "trolling" er unntatt og
+                    effekten anonymitet har. Det er tema som engasjerer mange!</Text>
                   </View>
                 </TouchableOpacity>
 
+                <View
+                  style={{
+                    borderBottomColor: '#fcc6c2',
+                    borderBottomWidth: 3,
+                    marginLeft: 40,
+                    marginRight: 40
+                  }}
+                />
+
                 <TouchableOpacity style={styles.postBox} onPress={() => this.props.skjermBytte('Forumpost')}>
                   <Text style={styles.postTittel}>Hvordan hjelpe et barn som har lukket seg?</Text>
-                  <View style={styles.navntittel}>
-                    <Text>Rød Høne</Text>
-                    <Text>'30.04.18'</Text>
+                  <View
+                    style={{
+                      borderBottomColor: '#1ba6cf',
+                      borderBottomWidth: 1,
+                    }}
+                  />
+                  <View style={styles.navnTittelFelt}>
+                    <Text style={styles.navnTittel}>Rød Høne</Text>
+                    <Text style={styles.navnTittel}>22.05.18</Text>
                   </View>
                   <View>
                     <Text>Et barn i klassen min har det ikke greit, barnet
@@ -151,6 +200,88 @@ export default class Forside extends Component {
                     seg og sier nesten aldri et ord. Barnet sitter stille og
                     hører, men responderer særs lite. Har noen erfaring med
                     dette? Hvordan kan jeg hjelpe dette flotte barnet?</Text>
+                  </View>
+                </TouchableOpacity>
+
+                <View
+                  style={{
+                    borderBottomColor: '#fcc6c2',
+                    borderBottomWidth: 3,
+                    marginLeft: 40,
+                    marginRight: 40
+                  }}
+                />
+
+                <TouchableOpacity style={styles.postBox} onPress={() => this.props.skjermBytte('Forumpost')}>
+                  <Text style={styles.postTittel}>Finnes det gode tips til innledning når mobbing skal tas opp som tema i klassen?</Text>
+                  <View
+                    style={{
+                      borderBottomColor: '#1ba6cf',
+                      borderBottomWidth: 1,
+                    }}
+                  />
+                  <View style={styles.navnTittelFelt}>
+                    <Text style={styles.navnTittel}>Marineblå Seilduk</Text>
+                    <Text style={styles.navnTittel}>22.05.18</Text>
+                  </View>
+                  <View>
+                    <Text>Vi snakket om mobbing på foreldremøtet i min datters 8. klasse. Jeg er foreldrekontakt og vi foreldre ønsket at læreren skulle diskutere mobbing i klassen. Det er ikke et stort problem hos oss, men vi ønsker at ungene våre skal ha gode holdninger. Læreren ville gjerne gjøre det, men visste ikke helt hvordan. Har dere noen ideer?</Text>
+                  </View>
+                </TouchableOpacity>
+
+                <View
+                  style={{
+                    borderBottomColor: '#fcc6c2',
+                    borderBottomWidth: 3,
+                    marginLeft: 40,
+                    marginRight: 40
+                  }}
+                />
+
+                <TouchableOpacity style={styles.postBox} onPress={() => this.props.skjermBytte('Forumpost')}>
+                  <Text style={styles.postTittel}>Er dette oppgavesettet greit?</Text>
+                  <View
+                    style={{
+                      borderBottomColor: '#1ba6cf',
+                      borderBottomWidth: 1,
+                    }}
+                  />
+                  <View style={styles.navnTittelFelt}>
+                    <Text style={styles.navnTittel}>Lysegrønt Håp</Text>
+                    <Text style={styles.navnTittel}>22.05.18</Text>
+                  </View>
+                  <View>
+                    <Text>Jeg lagde disse oppgavene som skal løses av eldre barn på barneskolenivå.
+                    De kan ses i lenken nederst i innlegget. Jeg lurer på om de er for overfladiske, eller at
+                    elevene vil syns de er kjedelige og ikke bry seg. Er det noen tips til forbedringer?</Text>
+                  </View>
+                </TouchableOpacity>
+
+                <View
+                  style={{
+                    borderBottomColor: '#fcc6c2',
+                    borderBottomWidth: 3,
+                    marginLeft: 40,
+                    marginRight: 40
+                  }}
+                />
+
+                <TouchableOpacity style={styles.postBox} onPress={() => this.props.skjermBytte('Forumpost')}>
+                  <Text style={styles.postTittel}>Hjelp til tolking av lovvverk</Text>
+                  <View
+                    style={{
+                      borderBottomColor: '#1ba6cf',
+                      borderBottomWidth: 1,
+                    }}
+                  />
+                  <View style={styles.navnTittelFelt}>
+                    <Text style={styles.navnTittel}>Oransj Kjøleskap</Text>
+                    <Text style={styles.navnTittel}>21.05.18</Text>
+                  </View>
+                  <View>
+                    <Text>Det står i oppll. §8.1 at andre tiltak må være prøvd. Vi har gjort en del,
+                    bl.a. foreldresamtale og skjerpet fokus i klassene generelt. Anmerkninger og utviselse hjelper ikke.
+                    Hva er det utover det vi kan gjøre som er "andre tiltak"?</Text>
                   </View>
                 </TouchableOpacity>
             </ScrollView>
@@ -164,85 +295,106 @@ export default class Forside extends Component {
 const styles = StyleSheet.create({
   background: {
     flex:1,
-    backgroundColor: '#00CED1'
+    backgroundColor: '#4682b4'
   },
   container1: {
     flex:2,
     flexDirection: 'row',
-    backgroundColor: '#00CED1',
+
     justifyContent: 'space-between',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 6
+
   },
   postTittel: {
-    fontWeight: 'bold'
+
+
+    color: '#02013a',
+    fontSize: 20,
+
+
+
   },
   container2: {
     flex:1,
     flexDirection: 'row',
-    backgroundColor: '#e0ffff',
+
     justifyContent: 'space-between',
-    borderColor: '#4682b4',
+
     borderRadius: 4,
-    borderWidth: 6
+
   },
-  box1: {
+  vanligKnapp: {
     flex: 1,
-    backgroundColor: '#fcc6c2',
+    backgroundColor: 'rgba(237, 249, 255, 0.5)',
     padding:10,
-    justifyContent: 'center',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 3
-  },
-  boxFav: {
-    flex: 1,
     flexDirection: 'row',
-    backgroundColor: '#fcc6c2',
-    padding:10,
     justifyContent: 'center',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 3
+    borderColor: '#fcc6c2',
+    borderRadius: 15,
+    borderWidth: 3,
+    margin: 3
   },
-  box3: {
-    flex:1
-  },
-  smallBox: {
+
+  litenKnapp: {
     flex:1,
-    backgroundColor:'#fdddda',
-    padding:2,
-    justifyContent: 'center'
+    backgroundColor:'rgba(237, 249, 255, 0.5)',
+    height: 40,
+    width: 100,
+    justifyContent: 'center',
+    borderColor: '#fcc6c2',
+    borderRadius: 15,
+    borderWidth: 3,
+    margin: 3
   },
   mainBox: {
     flex:10
   },
   contentBox: {
-    flex:1
+    flex:1,
+    marginTop: 10,
   },
   postBox: {
-    height: 175,
-    padding: 3,
-    backgroundColor: '#e0ffff',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 6
+
+    padding: 5,
+    marginTop: 5,
+    marginBottom: 5,
+    backgroundColor: 'rgba(237, 249, 255, 0.5)',
+
+
   },
-  navntittel: {
+  navnTittelFelt: {
     flexDirection: 'row',
     justifyContent: 'space-between'
+
+  },
+
+  navnTittel: {
+    marginTop: 2,
+    fontWeight: 'bold',
+    color: '#e0ffff'
   },
   toolbar: {
     height: 60,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'grey'
+    backgroundColor: '#e0ffff'
   },
   toolbarFont: {
     fontSize:20,
     fontWeight: 'bold',
-    color: 'white'
+    color: '#1ba6cf',
+    textAlign: 'center'
+  },
+
+  feedTittel: {
+    color: '#1ba6cf',
+    fontSize: 30,
+    marginTop: 20,
+    marginLeft: 5,
+    fontWeight: 'bold',
+    textShadowColor: 'rgb(255, 255, 255)',
+    textShadowOffset: {width: -1.5, height: 1.5},
+    textShadowRadius: 0
+
   }
 })

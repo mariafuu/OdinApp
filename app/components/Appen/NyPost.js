@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Picker, TouchableHighlight, TouchableOpacity,
-   TextInput, Switch} from 'react-native';
+   TextInput, Switch, ScrollView} from 'react-native';
 
 export default class NyPost extends Component {
   constructor(){
@@ -26,7 +26,7 @@ export default class NyPost extends Component {
         </TouchableOpacity>
         <View style={{flex:4}}>
           <Text style={styles.toolbarFont}>
-            Dette vil bli en toolbar!
+            Nytt innlegg
           </Text>
         </View>
         <TouchableOpacity
@@ -36,7 +36,7 @@ export default class NyPost extends Component {
         </TouchableOpacity>
       </View>
 
-
+      <ScrollView>
           <View style={styles.mainBox}>
             <View style={styles.pickerStyle}>
               <Picker
@@ -51,9 +51,15 @@ export default class NyPost extends Component {
 
             <View>
               <View>
-              <View style={styles.header}>
-                <Text>Tittel</Text>
+              <View>
+                <Text style={styles.mellomOverskrift}>Tittel</Text>
               </View>
+              <View
+                style={{
+                  borderBottomColor: '#1ba6cf',
+                  borderBottomWidth: 1,
+                }}
+              />
               <TextInput
                 style={styles.tittelInput}
                 placeholder="Tittel"
@@ -61,9 +67,15 @@ export default class NyPost extends Component {
               />
               </View>
               <View>
-              <View style={styles.header}>
-              <Text>Tekst</Text>
+              <View>
+              <Text style={styles.mellomOverskrift}>Tekst</Text>
               </View>
+              <View
+                style={{
+                  borderBottomColor: '#1ba6cf',
+                  borderBottomWidth: 1,
+                }}
+              />
                 <TextInput
                   multiline
                   style={styles.textInputStyle}
@@ -73,9 +85,15 @@ export default class NyPost extends Component {
               </View>
             </View>
             <View>
-              <View style={styles.header}>
-                <Text>Tagger</Text>
+              <View>
+                <Text style={styles.mellomOverskrift}>Tagger</Text>
               </View>
+              <View
+                style={{
+                  borderBottomColor: '#1ba6cf',
+                  borderBottomWidth: 1,
+                }}
+              />
               <TextInput
                 style={styles.tittelInput}
                 placeholder="Skriv inn nøkkelord"
@@ -97,7 +115,10 @@ export default class NyPost extends Component {
             </View>
 
           </View>
+          </ScrollView>
       </View>
+
+
     );
   }
 }
@@ -107,12 +128,9 @@ const styles = StyleSheet.create({
     flex:1,
     backgroundColor: '#4682b4'
   },
-  header: {
-    backgroundColor: '#e0ffff',
-    borderColor: '#4682b4',
-    borderRadius: 4,
-    borderWidth: 6,
-    width:70
+  mellomOverskrift: {
+    color: '#02013a',
+    fontSize: 20,
   },
   bottom: {
     flexDirection: 'row',
@@ -189,12 +207,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'grey'
+    backgroundColor: '#e0ffff'
   },
   toolbarFont: {
     fontSize:20,
     fontWeight: 'bold',
-    color: 'white'
+    color: '#1ba6cf',
+    textAlign: 'center'
   }
 
 })

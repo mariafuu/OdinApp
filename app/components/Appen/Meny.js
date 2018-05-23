@@ -107,7 +107,8 @@ const styles = StyleSheet.create({
   overskrift: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: '#1ba6cf'
+    color: '#1ba6cf',
+    textAlign: 'center'
   },
   container1: {
     flex:2,
