@@ -13,6 +13,10 @@ import Tips from './app/components/Appen/Tips.js';
 import Feide from './app/components/Appen/Feide.js';
 import TestPost from './app/components/Appen/TestPost.js';
 import Meny from './app/components/Appen/Meny.js';
+import Nyheter from './app/components/Appen/Nyheter.js';
+import Tipsograad from './app/components/Appen/Tipsograad.js';
+import Varsling from './app/components/Appen/Varsling.js';
+import Omappen from './app/components/Appen/Omappen.js';
 
 import Forum from './app/components/Forum/Forum.js';
 import Subforum from './app/components/Forum/Subforum.js';
@@ -36,7 +40,7 @@ export default class Odin extends Component {
       Forside, Profil, NyPost, Login, Favoritter, SearchResult, Appen, Tips, Feide,
       Forum, Subforum, Forumpost, TestPost, Meny,
       DokumentRessurs, LydRessurs, NyRessurs, PresentasjonRessurs, Ressursbank,
-      RessursKategori, VideoRessurs
+      RessursKategori, VideoRessurs, Nyheter, Tipsograad, Varsling, Omappen
     }
   }
 

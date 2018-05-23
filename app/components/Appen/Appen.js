@@ -47,16 +47,11 @@ export default class Appen extends Component {
               </View>
 
               <View style={styles.frontBox}>
-              <TouchableOpacity
-              style={styles.box1}
-              onPress={this.onPress1}
-              >
-                  <Text style={styles.knappFont}>Nyheter</Text>
+              <TouchableOpacity style={styles.box1} onPress={() => this.props.skjermBytte('Nyheter')}>
+                  <Text style={styles.knappFont} >Nyheter</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity
-                style={styles.box1}
-                onPress={this.onPress2}
+              <TouchableOpacity style={styles.box1} onPress={() => this.props.skjermBytte('Tipsograad')}
               >
                   <Text style={styles.knappFont}>Tips & Råd</Text>
               </TouchableOpacity>
@@ -65,8 +60,7 @@ export default class Appen extends Component {
 
             <View style={styles.frontBox}>
               <TouchableOpacity
-              style={styles.box1}
-              onPress={this.onPress3}
+              style={styles.box1} onPress={() => this.props.skjermBytte('Varsling')}
               >
                 <View>
                   <Text style={styles.knappFont}>Sjekkliste varsling</Text>
@@ -74,8 +68,7 @@ export default class Appen extends Component {
               </TouchableOpacity>
 
               <TouchableOpacity
-              style={styles.box1}
-              onPress={this.onPress4}
+              style={styles.box1} onPress={() => this.props.skjermBytte('Omappen')}
               >
                 <View>
                   <Text style={styles.knappFont}>Om appen</Text>
