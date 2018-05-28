@@ -7,9 +7,14 @@ export default class Ressursbank extends Component {
     super();
     this.state ={
       textValue:'Hello',
-      switchValue: false
+      switchValue: false,
+      favIkon: "✩"
     }
   }
+
+  endreFavIkon = () => {
+    this.setState({ favIkon: "★" });
+  };
 
   render() {
     return (
@@ -46,9 +51,12 @@ export default class Ressursbank extends Component {
               borderBottomWidth: 1,
             }}
           />
+            <Text numberOfLines={1} style={styles.favorittIkon} onPress={this.endreFavIkon}>{this.state.favIkon}
+            </Text>
           <TouchableOpacity style={styles.ressursTittel}
           onPress={() => this.props.skjermBytte('VideoRessurs')}>
-            <Text>✩ 🗣 Hva gjør jeg når noen krangler?</Text>
+
+            <Text style={styles.ressursIkon} numberOfLines={1}>🗣</Text> <Text numberOfLines={1}>Hva gjør jeg når noen krangler?</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.ressursTittel}>
             <Text>✩ 📽 Hvordan håndtere utfrysing?</Text>
@@ -147,6 +155,14 @@ ressursKategoriNavn: {
 
 ressursTittel: {
 
+},
+
+ressursIkon: {
+  fontSize: 35,
+},
+
+favorittIkon: {
+  fontSize: 35
 }
 
 
