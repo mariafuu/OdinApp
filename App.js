@@ -30,6 +30,7 @@ import PresentasjonRessurs from './app/components/Ressursbank/PresentasjonRessur
 import Ressursbank from './app/components/Ressursbank/Ressursbank.js';
 import RessursKategori from './app/components/Ressursbank/RessursKategori.js';
 import VideoRessurs from './app/components/Ressursbank/VideoRessurs.js';
+import FMRessurs1 from './app/components/Ressursbank/FMRessurs1.js';
 
 export default class Odin extends Component {
   constructor(){
@@ -41,7 +42,8 @@ export default class Odin extends Component {
       Forside, Profil, NyPost, Login, Favoritter, SearchResult, Appen, Tips, Feide,
       Forum, Subforum, Forumpost, TestPost, Meny,
       DokumentRessurs, LydRessurs, NyRessurs, PresentasjonRessurs, Ressursbank,
-      RessursKategori, VideoRessurs, Nyheter, Tipsograad, Varsling, Omappen, Lovverk
+      RessursKategori, VideoRessurs, Nyheter, Tipsograad, Varsling, Omappen, Lovverk,
+      FMRessurs1
     }
   }
 

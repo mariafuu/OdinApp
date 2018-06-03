@@ -59,8 +59,8 @@ export default class Ressursbank extends Component {
             <Text numberOfLines={2} style={styles.ressursKategoriNavn}>
             <Text style={styles.favorittIkon} onPress={this.endreFavIkon}>{this.state.favIkon}
             </Text>
-            <Text style={styles.ressursIkon}>📽</Text>
-            Når noen slår</Text>
+            <Text style={styles.ressursIkon}>📋</Text>
+            Hvordan snakke med foreldre om at deres barn mobber</Text>
           </TouchableOpacity>
           <View
             style={{
@@ -70,14 +70,20 @@ export default class Ressursbank extends Component {
           />
           <TouchableOpacity style={styles.ressursTittel}>
             <Text>
-            Film som forklarer hvorfor enkelte barn slår og hvordan man
-            skal takle slike situasjoner, både i situasjonen og forebyggende.</Text>
+            Kort tekst med instrukser og råd for hvordan man går frem for å
+            forklare foreldre at barnet deres mobber. </Text>
           </TouchableOpacity>
 
       <View style={styles.ressursKategoriBlokk}>
         <TouchableOpacity>
         <Text numberOfLines={15}>
-        Klikk her for å gå til youtube.com for å se filmen.</Text>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel
+        aliquam elit. Phasellus sit amet nunc urna. Fusce eu augue nulla. Ut aliquam
+         elit eu condimentum ultricies. Integer et urna sed odio placerat accumsan id
+         eu nisi. Suspendisse elementum, magna at mattis consequat, urna sapien
+         pellentesque dolor, eu ultrices purus arcu at
+         ligula. Fusce elementum interdum placerat. Sed rutrum lectus in ligula ultrices
+         congue. Suspendisse nec convallis purus. </Text>
         </TouchableOpacity>
         </View>
 
@@ -97,7 +103,7 @@ export default class Ressursbank extends Component {
 
             <TouchableOpacity
               style={styles.vanligKnapp}
-
+              
             >
               <Text>Send til e-post</Text>
               </TouchableOpacity>

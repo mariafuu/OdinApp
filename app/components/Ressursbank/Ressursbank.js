@@ -13,7 +13,7 @@ export default class Ressursbank extends Component {
   }
 
   endreFavIkon = () => {
-    this.setState({ favIkon: "★" });
+    this.setState({ favIkon: "★"});
   };
 
   render() {
@@ -51,15 +51,23 @@ export default class Ressursbank extends Component {
               borderBottomWidth: 1,
             }}
           />
-            <Text numberOfLines={1} style={styles.favorittIkon} onPress={this.endreFavIkon}>{this.state.favIkon}
+
+          <TouchableOpacity style={styles.ressursTittel}>
+
+             <Text numberOfLines={1}>
+            <Text style={styles.favorittIkon} onPress={this.endreFavIkon}>{this.state.favIkon}
             </Text>
+            <Text style={styles.ressursIkon}>🗣</Text>
+            Hva gjør jeg når noen krangler?</Text>
+          </TouchableOpacity>
+
           <TouchableOpacity style={styles.ressursTittel}
           onPress={() => this.props.skjermBytte('VideoRessurs')}>
-
-            <Text style={styles.ressursIkon} numberOfLines={1}>🗣</Text> <Text numberOfLines={1}>Hva gjør jeg når noen krangler?</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.ressursTittel}>
-            <Text>✩ 📽 Hvordan håndtere utfrysing?</Text>
+            <Text numberOfLines={1}>
+            <Text style={styles.favorittIkon} onPress={this.endreFavIkon}>{this.state.favIkon}
+            </Text>
+            <Text style={styles.ressursIkon}>📽</Text>
+            Hva gjør jeg når noen slår?</Text>
           </TouchableOpacity>
 
         </View>
@@ -74,11 +82,22 @@ export default class Ressursbank extends Component {
               borderBottomWidth: 1,
             }}
           />
-          <TouchableOpacity style={styles.ressursTittel}>
-            <Text>✩ 🗣 Kan jeg si dette til ei jente i klassen?</Text>
+          <TouchableOpacity style={styles.ressursTittel}
+          onPress={() => this.props.skjermBytte('Forumpost')}>
+            <Text numberOfLines={1}>
+            <Text style={styles.favorittIkon} onPress={this.endreFavIkon}>{this.state.favIkon}
+            </Text>
+            <Text style={styles.ressursIkon}>🗣</Text>
+            Hvordan hjelpe et barn som har lukket seg? </Text>
           </TouchableOpacity>
+
           <TouchableOpacity style={styles.ressursTittel}>
-            <Text>★ 📽 Mobbing - enkelt forklart for barn</Text>
+            <Text numberOfLines={1}>
+            <Text style={styles.favorittIkon} onPress={this.endreFavIkon}>{this.state.favIkon}
+            </Text>
+            <Text style={styles.ressursIkon}>📽</Text>
+
+            Mobbing - enkelt forklart for barn</Text>
           </TouchableOpacity>
 
         </View>
@@ -93,11 +112,21 @@ export default class Ressursbank extends Component {
               borderBottomWidth: 1,
             }}
           />
-          <TouchableOpacity style={styles.ressursTittel}>
-            <Text>✩ 📋 Hvordan snakke med foreldre om at deres barn mobber</Text>
+          <TouchableOpacity style={styles.ressursTittel}   onPress={() => this.props.skjermBytte('FMRessurs1')}>
+            <Text numberOfLines={2}>
+            <Text style={styles.favorittIkon} onPress={this.endreFavIkon}>{this.state.favIkon}
+            </Text>
+            <Text style={styles.ressursIkon}>📋</Text>
+
+          Hvordan snakke med foreldre om at deres barn mobber</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.ressursTittel}>
-            <Text>✩ 📋 Hvordan skal foreldre involveres i mobbesaker?</Text>
+            <Text numberOfLines={2}>
+            <Text style={styles.favorittIkon} onPress={this.endreFavIkon}>{this.state.favIkon}
+            </Text>
+            <Text style={styles.ressursIkon}>📋</Text>
+
+            Hvordan skal foreldre involveres i mobbesaker?</Text>
           </TouchableOpacity>
 
         </View>
