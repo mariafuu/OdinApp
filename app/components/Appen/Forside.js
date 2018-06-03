@@ -151,7 +151,7 @@ export default class Forside extends Component {
                   }}
                 />
 
-                <TouchableOpacity style={styles.postBox}>
+                <TouchableOpacity style={styles.postBox} onPress={() => this.props.skjermBytte('ForumpostSlidNeMob')}>
                   <Text style={styles.postTittel}>Slides nettmobbing universitetsnivå</Text>
                   <View
                     style={{
@@ -212,7 +212,7 @@ export default class Forside extends Component {
                   }}
                 />
 
-                <TouchableOpacity style={styles.postBox} onPress={() => this.props.skjermBytte('Forumpost')}>
+                <TouchableOpacity style={styles.postBox} onPress={() => this.props.skjermBytte('ForumpostMobKlas')}>
                   <Text style={styles.postTittel}>Finnes det gode tips til innledning når mobbing skal tas opp som tema i klassen?</Text>
                   <View
                     style={{

@@ -22,6 +22,8 @@ import Lovverk from './app/components/Appen/Lovverk.js';
 import Forum from './app/components/Forum/Forum.js';
 import Subforum from './app/components/Forum/Subforum.js';
 import Forumpost from './app/components/Forum/Forumpost.js';
+import ForumpostMobKlas from './app/components/Forum/ForumpostMobKlas.js';
+import ForumpostSlidNeMob from './app/components/Forum/ForumpostSlidNeMob.js';
 
 import DokumentRessurs from './app/components/Ressursbank/DokumentRessurs.js';
 import LydRessurs from './app/components/Ressursbank/LydRessurs.js';
@@ -43,7 +45,7 @@ export default class Odin extends Component {
       Forum, Subforum, Forumpost, TestPost, Meny,
       DokumentRessurs, LydRessurs, NyRessurs, PresentasjonRessurs, Ressursbank,
       RessursKategori, VideoRessurs, Nyheter, Tipsograad, Varsling, Omappen, Lovverk,
-      FMRessurs1
+      FMRessurs1, ForumpostMobKlas, ForumpostSlidNeMob
     }
   }
 
