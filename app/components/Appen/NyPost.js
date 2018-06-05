@@ -138,12 +138,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   vanligKnapp: {
-    backgroundColor: '#fcc6c2',
-    height: 40,
-    width: 100,
-    padding: 5,
+    flex: 1,
+    backgroundColor: 'rgba(237, 249, 255, 0.5)',
+    padding:10,
+    flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    borderColor: '#fcc6c2',
+    borderRadius: 15,
+    borderWidth: 3,
+    margin: 3
   },
   tittelInput: {
     padding: 10,
