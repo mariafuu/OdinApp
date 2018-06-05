@@ -12,7 +12,7 @@ export default class Ressursbank extends Component {
     }
   }
 
-  ShowAlertDialog = () =>{
+  ShowAlertDialogLastNed = () =>{
 
     Alert.alert(
       'Last ned',
@@ -22,6 +22,17 @@ export default class Ressursbank extends Component {
         {text: 'Ja', onPress: () => console.log('Ressurs lastet ned'), style: 'cancel'},
       ]
     )
+    }
+
+    ShowAlertDialogEpost = () =>{
+      Alert.alert(
+        'Send til epost',
+        'Vil du sende ressursen til epost?',
+        [
+          {text: 'Avbryt', onPress: () => console.log('Avbryt trykt')},
+          {text: 'Ja', onPress: () => console.log('Ressurs lastet ned'), style: 'cancel'},
+        ]
+      )
     }
 
   endreFavIkon = () => {
@@ -96,14 +107,14 @@ export default class Ressursbank extends Component {
         <View style={styles.container2}>
           <TouchableOpacity
             style={styles.vanligKnapp}
-            onPress={this.ShowAlertDialog}
+            onPress={this.ShowAlertDialogLastNed}
           >
             <Text>Last ned</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.vanligKnapp}
-              
+              onPress={this.ShowAlertDialogEpost}
             >
               <Text>Send til e-post</Text>
               </TouchableOpacity>

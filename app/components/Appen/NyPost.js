@@ -103,6 +103,7 @@ export default class NyPost extends Component {
             <View style={styles.bottom}>
               <TouchableOpacity
                 style={styles.vanligKnapp}
+                onPress={() => this.props.skjermBytte('Forside')}
               >
                 <Text>Avbryt</Text>
               </TouchableOpacity>
