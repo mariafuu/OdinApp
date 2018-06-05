@@ -44,36 +44,37 @@ export default class Meny extends Component {
           <View style={styles.overskriftBox}>
             <Text style={styles.overskrift}>Meny</Text>
           </View>
+
           <ScrollView style={styles.favorittliste}>
-            <View style={styles.favorittItem}>
-              <TouchableOpacity onPress={() => this.props.skjermBytte('Forside')}>
+            <TouchableOpacity style={styles.favorittItem}
+             onPress={() => this.props.skjermBytte('Forside')}>
                 <Text>Forside</Text>
               </TouchableOpacity>
-            </View>
 
-            <View style={styles.favorittItem}>
-              <TouchableOpacity onPress={() => this.props.skjermBytte('Ressursbank')}>
+            <TouchableOpacity style={styles.favorittItem}
+             onPress={() => this.props.skjermBytte('Ressursbank')}>
                 <Text>Ressursbank</Text>
               </TouchableOpacity>
-            </View>
 
-            <View style={styles.favorittItem}>
-              <TouchableOpacity onPress={() => this.props.skjermBytte('Favoritter')}>
+            <TouchableOpacity style={styles.favorittItem}
+             onPress={() => this.props.skjermBytte('Favoritter')}>
                 <Text>Favoritter</Text>
               </TouchableOpacity>
-            </View>
 
-            <View style={styles.favorittItem}>
-              <TouchableOpacity onPress={() => this.props.skjermBytte('Forum')}>
+            <TouchableOpacity style={styles.favorittItem}
+             onPress={() => this.props.skjermBytte('Forum')}>
                 <Text>Forum</Text>
               </TouchableOpacity>
-            </View>
 
-            <View style={styles.favorittItem}>
-              <TouchableOpacity onPress={() => this.props.skjermBytte('SearchResult')}>
+            <TouchableOpacity style={styles.favorittItem}
+             onPress={() => this.props.skjermBytte('SearchResult')}>
                 <Text>Søk</Text>
-              </TouchableOpacity>
-            </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.favorittItem}
+             onPress={() => this.props.skjermBytte('Appen')}>
+                <Text>Logg ut</Text>
+            </TouchableOpacity>
           </ScrollView>
 
       </View>
