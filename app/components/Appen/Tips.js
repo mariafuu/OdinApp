@@ -31,7 +31,7 @@ export default class Forside extends Component {
         </TouchableOpacity>
         <View style={{flex:4}}>
           <Text style={styles.toolbarFont}>
-            Ressursbank
+            Tips og råd
           </Text>
         </View>
         <TouchableOpacity
@@ -44,9 +44,8 @@ export default class Forside extends Component {
 
       <ScrollView style={styles.ressursListe}>
         <View style={styles.ressursKategoriBlokk}>
-          <TouchableOpacity
-          onPress={() => this.props.skjermBytte('VideoRessurs')}>
-            <Text style={styles.ressursKategoriNavn}>I skolegården</Text>
+          <TouchableOpacity>
+            <Text style={styles.ressursKategoriNavn}>Kommunikasjon</Text>
           </TouchableOpacity>
           <View
             style={{
@@ -54,19 +53,18 @@ export default class Forside extends Component {
               borderBottomWidth: 1,
             }}
           />
-          <TouchableOpacity style={styles.ressursTittel}
-          onPress={() => this.props.skjermBytte('VideoRessurs')}>
-            <Text>✩ 🗣 Hva gjør jeg når noen krangler?</Text>
-          </TouchableOpacity>
+
           <TouchableOpacity style={styles.ressursTittel}>
-            <Text>✩ 📽 Hvordan håndtere utfrysing?</Text>
+            <Text>Har du snakket med alle involverte parter? Husk at både mobbeutsatt
+            og mobber skal høres, og foreldre skal involveres. Har du varslet til
+            riktig instans?</Text>
           </TouchableOpacity>
 
         </View>
 
         <View style={styles.ressursKategoriBlokk}>
           <TouchableOpacity>
-            <Text style={styles.ressursKategoriNavn}>I klasserommet</Text>
+            <Text style={styles.ressursKategoriNavn}>Varslingsplikt og følelser</Text>
           </TouchableOpacity>
           <View
             style={{
@@ -75,17 +73,17 @@ export default class Forside extends Component {
             }}
           />
           <TouchableOpacity style={styles.ressursTittel}>
-            <Text>✩ 🗣 Kan jeg si dette til ei jente i klassen?</Text>
+            <Text>En lærer har varslingsplikt om mobbing der en elev føler seg
+            mobbet, uansett om læreren bevitnet mobbingen eller har annet bevis.
+          </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.ressursTittel}>
-            <Text>★ 📽 Mobbing - enkelt forklart for barn</Text>
-          </TouchableOpacity>
+
 
         </View>
 
         <View style={styles.ressursKategoriBlokk}>
           <TouchableOpacity>
-            <Text style={styles.ressursKategoriNavn}>Foreldremøte</Text>
+            <Text style={styles.ressursKategoriNavn}>Oppgaver og aktiviteter</Text>
           </TouchableOpacity>
           <View
             style={{
@@ -94,15 +92,31 @@ export default class Forside extends Component {
             }}
           />
           <TouchableOpacity style={styles.ressursTittel}>
-            <Text>✩ 📋 Hvordan snakke med foreldre om at deres barn mobber</Text>
+            <Text>Å lære elever om mobbing trenger ikke bestå av en tørr video eller
+            foiler. Som alt annet hjelper det å engasjere elevene i det de skal lære om.
+            Sjekk ressursbanken for mange ideér til oppgavesett!</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.ressursTittel}>
-            <Text>✩ 📋 Hvordan skal foreldre involveres i mobbesaker?</Text>
-          </TouchableOpacity>
+
 
         </View>
+        <View style={styles.ressursKategoriBlokk}>
+          <TouchableOpacity>
+            <Text style={styles.ressursKategoriNavn}>Forståelse</Text>
+          </TouchableOpacity>
+          <View
+            style={{
+              borderBottomColor: '#1ba6cf',
+              borderBottomWidth: 1,
+            }}
+          />
+          <TouchableOpacity style={styles.ressursTittel}>
+            <Text>Det er vanskeligere å mobbe noen man har full forståelse for.
+            Det er mange måter å lære elever om mangfoldet i klassen sin og
+            andres situasjoner uten at det føles påtvunget og usubtilt. Se
+            gjerne i ressursbanken eller spør i delingsarenaen om spesifikke råd!</Text>
+          </TouchableOpacity>
 
-
+    </View>
         </ScrollView>
       </View>
     );
