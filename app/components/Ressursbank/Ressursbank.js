@@ -37,8 +37,19 @@ export default class Ressursbank extends Component {
             <Text style={styles.toolbarFont}>Søk</Text>
         </TouchableOpacity>
       </View>
+<View>
+      <TouchableOpacity
+        style={styles.vanligKnapp}
+        onPress={() => this.props.skjermBytte('LastOppRes')}
+      >
+        <Text>Last opp ressurs</Text>
+        </TouchableOpacity>
 
+  </View>
 
+  <View>
+    <Text style={styles.feedTittel}>Nyeste innlegg:</Text>
+  </View>
       <ScrollView style={styles.ressursListe}>
         <View style={styles.ressursKategoriBlokk}>
           <TouchableOpacity
@@ -146,6 +157,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#4682b4'
   },
 
+  vanligKnapp: {
+    backgroundColor: 'rgba(237, 249, 255, 0.5)',
+    height: 40,
+    width: 300,
+    padding: 5,
+margin: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor: '#fcc6c2',
+    borderRadius: 50,
+    borderWidth: 3,
+
+  },
+
   toolbar: {
     height: 60,
     flexDirection: 'row',
@@ -163,8 +188,20 @@ const styles = StyleSheet.create({
 
 ressursListe: {
   paddingTop: 10,
-  marginTop: 10,
+  marginTop: 5,
   marginBottom: 10
+
+},
+
+feedTittel: {
+  color: '#1ba6cf',
+  fontSize: 30,
+  marginTop: 5,
+  marginLeft: 5,
+  fontWeight: 'bold',
+  textShadowColor: 'rgb(255, 255, 255)',
+  textShadowOffset: {width: -1.5, height: 1.5},
+  textShadowRadius: 0
 
 },
 
